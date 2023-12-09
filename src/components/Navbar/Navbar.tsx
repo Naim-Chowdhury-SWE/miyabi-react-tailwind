@@ -2,8 +2,9 @@ import logo from "../../data/logos";
 
 const Navbar = () => {
   return (
-    <div className="">
+    <div className="fixed bg-black bg-opacity-80 w-full">
         <img src={logo.miyabitextredwhite} alt="Miyabi Logo" className="h-16 m-4 float-left" />
+          <img src={logo.fanred}alt="Side Menu button"className="h-16 m-4 float-right"/>
       <div className="flex justify-center">
         <ul className="text-white flex items-center mx-4">
           <li className="m-8">Meny</li>
@@ -22,11 +23,6 @@ const Navbar = () => {
         >Hemleverans med Wolt</a></li>
         </ul>
       </div>
-      <img
-          src={logo.fanred}
-          alt="Side Menu button"
-          className="rotate"
-        />
     </div>
   )
 }

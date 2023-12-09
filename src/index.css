@@ -4,4 +4,5 @@
 
 html {
   background: url(../src/assets/bg.webp);
+  background-attachment: fixed;
 }

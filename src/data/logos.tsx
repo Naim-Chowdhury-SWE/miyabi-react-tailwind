@@ -18,7 +18,29 @@ import miyabitextredwhite from "../assets/logos/miyabitextredwhite.svg";
 import miyabitextwhite from "../assets/logos/miyabitextwhite.svg";
 import bg from "../assets/bg.webp";
 
-export default {
+interface ImagePaths {
+  fanblack: string;
+  fanred: string;
+  fanwhite: string;
+  geishablack: string;
+  geishared: string;
+  geishawhite: string;
+  kanjiblack: string;
+  kanjiwhite: string;
+  logo: string;
+  logo2: string;
+  logo3: string;
+  logoWhite: string;
+  logowhite: string;
+  logoblack: string;
+  miyabitextblack: string;
+  miyabitextredblack: string;
+  miyabitextredwhite: string;
+  miyabitextwhite: string;
+  bg: string;
+}
+
+const logos: ImagePaths = {
   fanblack,
   fanred,
   fanwhite,
@@ -39,3 +61,5 @@ export default {
   miyabitextwhite,
   bg,
 };
+
+export default logos;
