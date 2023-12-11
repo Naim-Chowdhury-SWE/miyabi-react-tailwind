@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar/Navbar"
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer"
 import Carousel from "./components/Carousel/Carousel"
 
@@ -12,8 +13,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="sandbox app__bg">
-        <section className="sandbox__carousel">
+      <div className="">
+        {/* <Header /> */}
+        <section className="">
           <Carousel slides={SLIDES} options={OPTIONS} />
         </section>
       </div>

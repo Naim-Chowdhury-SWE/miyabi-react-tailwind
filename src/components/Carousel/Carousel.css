@@ -1,8 +1,7 @@
 .embla {
     --slide-spacing: 1rem;
     --slide-size: 100%;
-    --slide-height: 25rem;
-    padding: 1.6rem;
+    --slide-height: 30rem;
   }
   .embla__viewport {
     overflow: hidden;
@@ -25,10 +24,6 @@
     width: 100%;
     object-fit: cover;
   }
-  
-  .sandbox {
-    width: 100%;
-  }
 
   .embla__text {
     position: absolute;
@@ -38,9 +33,7 @@
 
 
   @media (min-width: 750px) {
-    .sandbox {
-        padding: 0 5rem;
-    }
+
   }
   .sandbox__carousel {
     position: relative;
@@ -50,7 +43,7 @@
   
   @media (max-width: 749px) {
     .embla {
-      --slide-height: 10rem;
+      --slide-height: 15rem;
     }
     .sandbox__carousel {
       border-top: 0.1rem solid var(--detail-low-contrast);

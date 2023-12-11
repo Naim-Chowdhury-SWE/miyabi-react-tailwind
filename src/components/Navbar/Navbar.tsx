@@ -1,48 +1,85 @@
+import { FaLocationDot } from "react-icons/fa6";
+import { BsTelephoneFill } from "react-icons/bs";
 import logo from "../../data/logos";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
+  const [isDropdownEnabled, setIsDropdownEnabled] = useState(true);
 
   const toggleDropdown = () => {
+    setIsContactDropdownOpen(false);
     setIsDropdownOpen(prevState => !prevState);
   };
+
+  const toggleContactDropdown = () => {
+    setIsDropdownOpen(false);
+    setIsContactDropdownOpen(prevState => !prevState);
+  };
+
+  const closeDropdowns = () => {
+    setIsDropdownOpen(false);
+    setIsContactDropdownOpen(false);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDropdownEnabled(window.innerWidth <= 1024);
+      closeDropdowns();
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <nav className="bg-black bg-opacity-80 w-full fixed z-50 top-0">
-        <img src={logo.miyabitextredwhite} alt="Miyabi Logo" className="h-24 m-auto float-left" />
-          <img src={logo.fanred} alt="Side Menu button" className="h-12 m-6 p-auto float-right lg:hidden cursor-pointer" onClick={toggleDropdown} />
-      <div className="justify-center hidden lg:flex">
-        <ul className="text-white flex items-center mx-4">
-          <li className="m-8">Meny</li>
-          <li className="m-8">Kontakta Oss</li>
-          <li><a
+    <nav className="bg-red-800 w-full fixed z-50 top-0 p-2">
+      <img src={logo.miyabitextblack} alt="Miyabi Logo" className="h-24 m-auto float-left" />
+          <img src={logo.fanblack} alt="Side Menu button" className="h-12 m-6 p-auto float-right lg:hidden cursor-pointer" onClick={toggleDropdown} />
+      <div className="justify-center hidden lg:flex p-4">
+        <ul className="flex items-center mx-4 text-black font-bold">
+          <div className="hover:bg-red-900 hover:text-white transition duration-300 rounded-lg mx-2">
+            <li className="m-4">Meny</li>
+          </div>
+          <div className="hover:bg-red-900 hover:text-white transition duration-300 rounded-lg mx-2">
+            <li className="m-4" onClick={toggleContactDropdown}>Kontakta Oss</li>
+          </div>
+          <div className="hover:bg-red-900 hover:text-white transition duration-300 rounded-lg mx-2">
+          <li className="m-4"><a
           href="https://app.fasterorder.se/menu/sv/37"
           target="_blank"
             rel="noreferrer"
-            className="m-8"
-        >Beställ Takeaway</a></li>
-          <li><a
+            >Beställ Takeaway</a></li>
+          </div>
+          <div className="hover:bg-red-900 hover:text-white transition duration-300 rounded-lg mx-2">
+          <li className="m-4"><a
           href="https://wolt.com/sv/swe/stockholm/restaurant/miyabi"
           target="_blank"
             rel="noreferrer"
-            className="m-8"
-        >Hemleverans med Wolt</a></li>
+            >Hemleverans med Wolt</a></li>
+            </div>
         </ul>
       </div>
-      {isDropdownOpen && (
+      {isDropdownOpen && isDropdownEnabled && (
         <div className="w-full z-40 overflow-auto">
-          <ul className="text-center text-white">
-              <li className="">
+          <ul className="text-center text-black font-semibold mt-8">
+              <li className="hover:bg-red-900 hover:text-white transition duration-300">
                 <a href="tel:+46763043985">Ring och Beställ</a>
               </li>
-              <li className="my-2">
+              <li className="my-2 hover:bg-red-900 hover:text-white transition duration-300">
                 <a
                   href="https://app.fasterorder.se/menu/sv/37"
                   target="_blank"
                   rel="noreferrer"
                 >Beställ Takeaway via vår App</a>
               </li>
-              <li className="my-2">
+              <li className="my-2 hover:bg-red-900 hover:text-white transition duration-300">
                 <a
                   href="https://wolt.com/sv/swe/stockholm/restaurant/miyabi"
                   target="_blank"
@@ -50,12 +87,32 @@ const Navbar = () => {
                 >Hemleverans med Wolt
                 </a>
               </li>
-              <li className="my-2">Hem</li>
-              <li className="my-2">Meny</li>
-              <li className="my-2">Contact</li>
+              <br />
+            <li className="my-2 hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer">Meny</li>
+            <br />
+              <li className="my-2 hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer" onClick={toggleContactDropdown}>Kontakt</li>
             </ul>
         </div>
-        )}
+      )}
+       {isContactDropdownOpen && (
+        <div className="text-black font-bold flex justify-center lg:mt-2">
+          <address className="absolute bg-red-800 w-full lg:w-1/5 lg:p-4">
+            <a className="flex flex-col items-center" href="tel:+46763043985">
+            <BsTelephoneFill />
+              <p className="top-4">076-304 39 85</p>
+            </a>
+            <a
+              className="flex flex-col items-center mt-4"
+              href="https://maps.app.goo.gl/jVynK1HvdsJKrXAx5"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLocationDot />
+              <p>Kyrkvägen, Hersbyholms Stationshus, Lidingö</p>
+            </a>
+          </address>
+        </div>
+          )}
     </nav>
   )
 }
