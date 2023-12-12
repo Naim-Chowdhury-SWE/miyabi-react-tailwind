@@ -1,6 +1,9 @@
 import Navbar from "./components/Navbar/Navbar"
 import Header from "./components/Header/Header";
 import Lunch from "./components/Meny/Lunch/Lunch";
+import Sushi from "./components/Meny/Sushi/Sushi";
+import Norimaki from "./components/Meny/Norimaki/Norimaki";
+import MenuComponent from "./components/Meny/Sushi/Test";
 import Footer from "./components/Footer/Footer"
 import Carousel from "./components/Carousel/Carousel"
 
@@ -20,8 +23,14 @@ function App() {
           <Carousel slides={SLIDES} options={OPTIONS} />
         </section>
       </div>
-      <main>
         <Header />
+      <main>
+        <Lunch />
+        <Sushi />
+        <div>
+      <h1 className="text-3xl font-bold text-center my-8">Sushi Restaurant Menu</h1>
+      <MenuComponent />
+    </div>
       </main>
         <Footer />
     </>
