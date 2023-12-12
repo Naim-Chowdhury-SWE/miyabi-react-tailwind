@@ -3,12 +3,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { images } from "../../data/CarouselData";
 import "./Carousel.css";
 
-interface Props {
-  slides: any[];
-  options: any;
-}
-
-const EmblaCarousel = (props: Props) => {
+const EmblaCarousel = (props) => {
   const { slides, options } = props;
   const [emblaRef] = useEmblaCarousel(options, [Autoplay()]);
 

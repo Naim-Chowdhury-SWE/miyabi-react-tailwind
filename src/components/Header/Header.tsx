@@ -1,9 +1,9 @@
 
 const Header = () => {
   return (
-      <header>
-          <h2>Välkommen till Miyabi</h2>
-          <p>Vi serverar spännande mat från det japanska köket under veckans alla dagar.</p>
+      <header className="text-center font-cormorant text-white font-bold lg:text-3xl m-4">
+          <h2 className="">Välkommen till Miyabi</h2>
+          <p className="">Vi serverar spännande mat från det japanska köket under veckans alla dagar.</p>
       </header>
   )
 }

@@ -40,24 +40,24 @@ const Navbar = () => {
 
   return (
     <nav className="bg-red-800 w-full fixed z-50 top-0 p-2">
-      <img src={logo.miyabitextblack} alt="Miyabi Logo" className="h-24 m-auto float-left" />
-          <img src={logo.fanblack} alt="Side Menu button" className="h-12 m-6 p-auto float-right lg:hidden cursor-pointer" onClick={toggleDropdown} />
+        <img src={logo.miyabitextblack} alt="Miyabi Logo" className="h-12 lg:h-24 m-auto float-left" />
+          <img src={logo.fanblack} alt="Side Menu button" className="h-12 lg:m-6 p-auto float-right lg:hidden cursor-pointer" onClick={toggleDropdown} />
       <div className="justify-center hidden lg:flex p-4">
         <ul className="flex items-center mx-4 text-black font-bold">
-          <div className="hover:bg-red-900 hover:text-white transition duration-300 rounded-lg mx-2">
+          <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
             <li className="m-4">Meny</li>
           </div>
-          <div className="hover:bg-red-900 hover:text-white transition duration-300 rounded-lg mx-2">
+          <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
             <li className="m-4" onClick={toggleContactDropdown}>Kontakta Oss</li>
           </div>
-          <div className="hover:bg-red-900 hover:text-white transition duration-300 rounded-lg mx-2">
+          <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
           <li className="m-4"><a
           href="https://app.fasterorder.se/menu/sv/37"
           target="_blank"
             rel="noreferrer"
             >Beställ Takeaway</a></li>
           </div>
-          <div className="hover:bg-red-900 hover:text-white transition duration-300 rounded-lg mx-2">
+          <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
           <li className="m-4"><a
           href="https://wolt.com/sv/swe/stockholm/restaurant/miyabi"
           target="_blank"

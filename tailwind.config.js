@@ -7,7 +7,11 @@ export default {
         white: "#fff",
         golden: "#DCCA87",
       },
+      fontFamily: {
+        cormorant: ["Cormorant Upright", "sans-serif"],
+        opensans: ["Open Sans", "sans-serif"],
+      },
     },
+    plugins: [],
   },
-  plugins: [],
 };

@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
   --font-base: 'Cormorant Upright', serif;
@@ -20,6 +20,12 @@ html {
   background: url(../src/assets/bg.webp);
   background-attachment: fixed;
   padding-top: 6rem;
+}
+
+@media (max-width: 1024px) {
+  html {
+    padding-top: 4rem;
+  }
 }
 
 .p__cormorant {
