@@ -6,6 +6,49 @@ import BlandadSushi13 from "../../assets/food/BlandadSushi.webp";
 import BlandadSushi14 from "../../assets/food/BlandadSushi.webp";
 import BlandadSushi16 from "../../assets/food/BlandadSushi.webp";
 import BlandadSushi20 from "../../assets/food/BlandadSushi.webp";
+import LaxRullar8 from "../assets/food/LaxRullar8.webp";
+import LaxRullar10 from "../assets/food/LaxRullar10.webp";
+import LaxRullar12 from "../assets/food/LaxRullar12.webp";
+import VegetariskSushi10 from "../assets/food/VegetariskSushi10.webp";
+import VegetariskSushi12 from "../assets/food/VegetariskSushi12.webp";
+import { MenuCategory } from "../../types";
+
+// Define individual arrays for each category
+export const mixedSushi: MenuCategory = {
+  name: "Sushi Meny",
+  dishes: [
+    {
+      dishname: "Blandad Sushi",
+      pieces: [7,8,9,11],
+      prices: [89, 99, 109, 129],
+      images: [BlandadSushi7, BlandadSushi8, BlandadSushi9, BlandadSushi11],
+      description: "Blandad Sushi som innehåller Rullar, Lax, Avocado, Ägg och Räka.",
+    },
+    {
+      dishname: "Blandad Sushi",
+      pieces: [13,14,16,20],
+      prices: [149, 159, 179, 219],
+      images: [BlandadSushi13, BlandadSushi14, BlandadSushi16, BlandadSushi20],
+      description: "Blandad Sushi som innehåller Rullar, Lax, Avocado, Ägg, Räka och/eller Tonfisk, Bläckfisk, havsabbore, Rökt Ål.",
+    },
+    {
+      dishname: "Lax & Rullar",
+      pieces: [8,10,12],
+      prices: [99, 119, 139],
+      images: [LaxRullar8, LaxRullar10, LaxRullar12],
+      description: "Blandad Sushi som innehåller Rullar och Lax.",
+    },
+    {
+      dishname: "Vegetarisk Sushi",
+      pieces: [10,12],
+      prices: [109, 129],
+      images: [VegetariskSushi10, VegetariskSushi12],
+      description: "Blandad Sushi som innehåller Rullar, Lax, Avocado, Ägg, Räka och/eller Tonfisk, Bläckfisk, havsabbore, Rökt Ål.",
+    },
+    // ... add more dishes as needed
+  ],
+};
+
 
 export const blandadSushi2 = [
   {
