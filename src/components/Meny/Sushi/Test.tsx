@@ -1,6 +1,7 @@
 // MenuComponent.tsx
 import React, { useState } from "react";
 import { sushiMenu } from "./Data";
+/* import { sushiMenu } from "../../../data/Meny/Menu"; */
 
 type DishProps = {
   dish: {
