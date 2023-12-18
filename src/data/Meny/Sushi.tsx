@@ -1,7 +1,7 @@
-import BlandadSushi7 from "../../assets/food/BlandadSushiSmall.webp";
-import BlandadSushi8 from "../../assets/food/BlandadSushiSmall.webp";
-import BlandadSushi9 from "../../assets/food/BlandadSushiSmall.webp";
-import BlandadSushi11 from "../../assets/food/BlandadSushiSmall.webp";
+import BlandadSushi7 from "../../assets/food/BlandadSushi.webp";
+import BlandadSushi8 from "../../assets/food/BlandadSushi.webp";
+import BlandadSushi9 from "../../assets/food/BlandadSushi.webp";
+import BlandadSushi11 from "../../assets/food/BlandadSushi.webp";
 import BlandadSushi13 from "../../assets/food/BlandadSushi.webp";
 import BlandadSushi14 from "../../assets/food/BlandadSushi.webp";
 import BlandadSushi16 from "../../assets/food/BlandadSushi.webp";
@@ -29,7 +29,7 @@ import FamiljeSushi70 from "../../assets/food/FamiljeSushi70.webp";
 import { MenuCategory } from "../../types";
 
 // Define individual arrays for each category
-export const mixedSushi: MenuCategory = {
+export const Sushi: MenuCategory = {
   name: "Sushi Meny",
   dishes: [
     {
@@ -140,7 +140,7 @@ export const mixedSushi: MenuCategory = {
 };
 
 
-export const blandadSushi2 = [
+/* export const blandadSushi2 = [
   {
     title: "Blandad Sushi 1",
     variants: [
@@ -207,7 +207,7 @@ export const blandadSushi2 = [
       },
     ],
   },
-];
+]; */
 
 /* export const menuSushi = [
   {
