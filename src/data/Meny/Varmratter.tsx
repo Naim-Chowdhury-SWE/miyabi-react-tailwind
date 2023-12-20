@@ -1,6 +1,42 @@
+import placeholderFood from "../../assets/food/food.svg";
 
+import Yakitori from "../../assets/food/Yakitori.webp";
+import Yakiniku from "../../assets/food/Yakiniku.webp";
+import YakinikuSushi from "../../assets/food/YakinikuSushi.webp";
 
-const varmratterData = [
+import Bento from "../../assets/food/Bento.webp";
+import BentoMiyabi from "../../assets/food/BentoMiyabi.webp";
+import BentoDeluxe from "../../assets/food/BentoDeluxe.webp";
+import BentoGyoza from "../../assets/food/BentoGyoza.webp";
+
+import Gyoza from "../../assets/food/Gyoza.webp";
+import Yakisoba from "../../assets/food/Yakisoba.webp";
+import WokadKyckling from "../../assets/food/WokadKyckling.webp";
+import WokadBiff from "../../assets/food/WokadBiff.webp";
+import WokadRäkor from "../../assets/food/WokadRäkor.webp";
+import StektRisVeg from "../../assets/food/StektRisVeg.webp";
+import StektRisKyckling from "../../assets/food/StektRisKyckling.webp";
+import StektRisRäka from "../../assets/food/StektRisRäka.webp";
+import StektRisEntrecote from "../../assets/food/StektRisEntrecote.webp";
+import Tempura from "../../assets/food/Tempura.webp";
+import Karaage from "../../assets/food/Karaage.webp";
+import Laxteriyaki from "../../assets/food/Laxteriyaki.webp";
+import Vårrullar7 from "../../assets/food/Vårrullar7.webp";
+import Vårrullar10 from "../../assets/food/Vårrullar10.webp";
+
+import UdonEntrecote from "../../assets/food/UdonEntrecote.webp";
+import UdonVegetarisk from "../../assets/food/UdonVegetarisk.webp";
+import UdonTempura from "../../assets/food/UdonTempura.webp";
+import UdonGyoza from "../../assets/food/UdonGyoza.webp";
+
+import BibimbapEntrecote from "../../assets/food/BibimbapEntrecote.webp";
+import BibimbapKyckling from "../../assets/food/BibimbapKyckling.webp";
+import BibimbapRäka from "../../assets/food/BibimbapRäka.webp";
+import BibimbapLax from "../../assets/food/BibimbapLax.webp";
+import BibimbapTofu from "../../assets/food/BibimbapTofu.webp";
+import BibimbapMix from "../../assets/food/BibimbapMix.webp";
+
+export const Varmratter = [
   {
     dishname: "Yakiniku",
     types: ["Normal", "Stor"],
@@ -19,14 +55,14 @@ const varmratterData = [
     dishname: "Yakiniku + 5 bitar sushi",
     types: [],
     prices: [159],
-    images: [placeholderFood],
+    images: [YakinikuSushi],
     description: "Strimlad Entrecote, serveras med ris samt med 5 bitar blandad sushi",
   },
   {
     dishname: "Bentolåda",
-    types: [],
-    prices: [149],
-    images: [Bento],
+    types: ["Normal", "Miyabi Bento", "Bento Deluxe", BentoGyoza],
+    prices: [149,165,185,149],
+    images: [Bento, BentoMiyabi,BentoDeluxe,BentoGyoza],
     description: "Yakiniku, Yakitori (2 kycklingspett) samt Sushi (2 rullar, 1 lax, 1 räka)",
   },
   {
@@ -46,7 +82,7 @@ const varmratterData = [
   {
     dishname: "Bento Gyoza",
     types: [],
-    prices: [185],
+    prices: [149],
     images: [BentoGyoza],
     description: "Yakiniku, Yakitori och Gyoza (2st)",
   },
@@ -61,7 +97,7 @@ const varmratterData = [
     dishname: "Vegetarisk Gyoza",
     types: ["6 Bitar", "8 Bitar"],
     prices: [118, 138],
-    images: [placeholderFood, placeholderFood],
+    images: [Gyoza, Gyoza],
     description: "Vegetariska degknyten som serveras med ris och sås",
   },
   {
@@ -89,14 +125,14 @@ const varmratterData = [
     dishname: "Wokad biff med grönsaker",
     types: [],
     prices: [145],
-    images: [placeholderFood],
+    images: [WokadBiff],
     description: "Serveras med ris eller nudlar",
   },
   {
     dishname: "Tempura",
     types: [],
     prices: [150],
-    images: [placeholderFood],
+    images: [Tempura],
     description: "Friterade jätteräkor med grönsaker och ris",
   },
   {
@@ -107,24 +143,38 @@ const varmratterData = [
     description: "Friterade kycklingbitar med ris samt sås",
   },
   {
+    dishname: "Stekt Ris med Grönsaker",
+    types: ["Entrecote", "Kyckling", "Räkor", "Tofu"],
+    prices: [149],
+    images: [StektRisEntrecote, StektRisKyckling, StektRisRäka, StektRisVeg],
+    description: "Grönsaker samt sallad ingår",
+  },
+  {
     dishname: "Stekt Ris med Entrecote",
     types: [],
     prices: [149],
-    images: [placeholderFood],
+    images: [StektRisEntrecote],
     description: "Grönsaker samt sallad ingår",
   },
   {
     dishname: "Stekt Ris med Kyckling",
     types: [],
     prices: [149],
-    images: [placeholderFood],
+    images: [StektRisKyckling],
     description: "Grönsaker samt sallad ingår",
   },
   {
     dishname: "Stekt Ris med Räkor",
     types: [],
     prices: [149],
-    images: [placeholderFood],
+    images: [StektRisRäka],
+    description: "Grönsaker samt sallad ingår",
+  },
+  {
+    dishname: "Stekt Ris med Tofu",
+    types: [],
+    prices: [149],
+    images: [StektRisVeg],
     description: "Grönsaker samt sallad ingår",
   },
   {
@@ -138,8 +188,71 @@ const varmratterData = [
     dishname: "Vegetariska Vårrullar",
     types: ["7 Bitar", "10 Bitar"],
     prices: [110, 125],
-    images: [placeholderFood, placeholderFood],
+    images: [Vårrullar7, Vårrullar10],
     description: "Serveras med ris sallad samt sås",
+  },
+  {
+    dishname: "Bibimbap",
+    types: ["Entrécôte", "Kyckling", "Räkor"],
+    prices: [139],
+    images: [BibimbapEntrecote, BibimbapKyckling, BibimbapRäka],
+    description: "Koreansk rätt som innehåller ris, olika typer av sallader, kimchi och starksås. Toppas med ett stekt ägg",
+  },
+  {
+    dishname: "Bibimbap",
+    types: ["Lax (rå)", "Tofu", "Mix"],
+    prices: [139],
+    images: [BibimbapLax,BibimbapTofu,BibimbapMix],
+    description: "Koreansk rätt som innehåller ris, olika typer av sallader, kimchi och starksås. Toppas med ett stekt ägg",
+  },
+  {
+    dishname: "Bibimbap Entrécôte",
+    types: [],
+    prices: [139],
+    images: [BibimbapEntrecote],
+    description: "Koreansk rätt som innehåller ris, olika typer av sallader, kimchi och starksås. Toppas med ett stekt ägg",
+  },
+  {
+    dishname: "Bibimbap Kyckling",
+    types: [],
+    prices: [139],
+    images: [BibimbapKyckling],
+    description: "Koreansk rätt som innehåller ris, olika typer av sallader, kimchi och starksås. Toppas med ett stekt ägg",
+  },
+  {
+    dishname: "Bibimbap Räkor",
+    types: [],
+    prices: [139],
+    images: [BibimbapRäka],
+    description: "Koreansk rätt som innehåller ris, olika typer av sallader, kimchi och starksås. Toppas med ett stekt ägg",
+  },
+  {
+    dishname: "Bibimbap Lax (Rå)",
+    types: [],
+    prices: [139],
+    images: [BibimbapLax],
+    description: "Koreansk rätt som innehåller ris, olika typer av sallader, kimchi och starksås. Toppas med ett stekt ägg",
+  },
+  {
+    dishname: "Bibimbap Tofu",
+    types: [],
+    prices: [139],
+    images: [BibimbapTofu],
+    description: "Koreansk rätt som innehåller ris, olika typer av sallader, kimchi och starksås. Toppas med ett stekt ägg",
+  },
+  {
+    dishname: "Bibimbap Mix",
+    types: [],
+    prices: [139],
+    images: [BibimbapMix],
+    description: "Entrécôte, Kyckling samt räkor ingår i denna Bibimbap",
+  },
+  {
+    dishname: "Uddon",
+    sizes: ["Entrecote", "Tempura", "Vegetarisk", "Gyoza"],
+    prices: [145],
+    images: [UdonEntrecote, UdonTempura, UdonVegetarisk, UdonGyoza],
+    description: "Nudelsoppa gjord på Risnudlar, grönsaker samt entrecote",
   },
   {
     dishname: "Uddon Entrecote",
@@ -180,211 +293,7 @@ const varmratterData = [
     dishname: "Ramen Räka",
     sizes: [],
     prices: [145],
-    images: [RamenRäka],
+    images: [placeholderFood],
     description: "Nudelsoppa gjord på äggnudlar, grönsaker och kokt ägg",
   },
 ];
-
-
-/* const Varmratter = [
-  {
-    title: "Yakiniku Normal",
-    description: "Strimlad Entrecote, serveras med ris",
-    price: "123kr",
-    image: Yakiniku,
-  },
-  {
-    title: "Yakiniku Stor",
-    description: "Strimlad Entrecote, serveras med ris",
-    price: "143kr",
-    image: Yakiniku,
-  },
-  {
-    title: "Yakitori Normal",
-    description: "5 st Kycklingspett med yakitorisås, serveras med ris",
-    price: "123kr",
-    image: Yakitori,
-  },
-  {
-    title: "Yakitori Stor",
-    description: "7 st Kycklingspett med yakitorisås, serveras med ris",
-    price: "143kr",
-    image: Yakitori,
-  },
-  {
-    title: "Yakiniku + 5 bitar sushi",
-    description:
-      "Strimlad Entrecote, serveras med ris samt med 5 bitar blandad sushi",
-    price: "159kr",
-    image: placeholderFood,
-  },
-  {
-    title: "Bentolåda",
-    description:
-      "Yakiniku, Yakitori (2 kycklingspett) samt Sushi (2 rullar, 1 lax, 1 räka)",
-    price: "149kr",
-    image: Bento,
-  },
-  {
-    title: " Miyabi Bento",
-    description:
-      "Yakiniku, Yakitori, Tempura (2st friterade jätträkor) samt Sushi (1 lax, 1 räka, 1 )",
-    price: "165kr",
-    image: BentoMiyabi,
-  },
-  {
-    title: "Bento Deluxe",
-    description:
-      "Yakiniku, Yakitori, Tempura, Gyoza (2st) samt Sushi (1 lax, 1 räka, 1 tuna alt valfritt)",
-    price: "185kr",
-    image: BentoDeluxe,
-  },
-  {
-    title: "Bento Gyoza",
-    description: "Yakiniku, Yakitori och Gyoza (2st)",
-    price: "185kr",
-    image: BentoGyoza,
-  },
-  {
-    title: "Gyoza 6 Bitar",
-    description:
-      "6 bitar blandfärsfyllda degknyten som serveras med ris och sås",
-    price: "118kr",
-    image: Gyoza,
-  },
-  {
-    title: "Gyoza 8 Bitar",
-    description:
-      "8 bitar blandfärsfyllda degknyten som serveras med ris och sås",
-    price: "138kr",
-    image: Gyoza,
-  },
-  {
-    title: "Vegetarisk Gyoza 6 Bitar",
-    description: "6 bitar vegetariska degknyten som serveras med ris och sås",
-    price: "118kr",
-    image: placeholderFood,
-  },
-  {
-    title: "Vegetarisk Gyoza 8 Bitar",
-    description: "6 bitar vegetariska degknyten som serveras med ris och sås",
-    price: "138kr",
-    image: placeholderFood,
-  },
-  {
-    title: "Yakisoba",
-    description: "Wokad äggnudlar med entrecote, grönsaker",
-    price: "149kr",
-    image: Yakisoba,
-  },
-  {
-    title: "Wokade räkor med grönsaker",
-    description: "Serveras med ris eller nudlar",
-    price: "149kr",
-    image: WokadRäkor,
-  },
-  {
-    title: "Wokad kyckling med grönsaker",
-    description: "Serveras med ris eller nudlar",
-    price: "145kr",
-    image: WokadKyckling,
-  },
-  {
-    title: "Wokad biff med grönsaker",
-    description: "Serveras med ris eller nudlar",
-    price: "145kr",
-    image: placeholderFood,
-  },
-  {
-    title: "Tempura",
-    description: "Friterade jätteräkor med grönsaker och ris",
-    price: "150kr",
-    image: placeholderFood,
-  },
-  {
-    title: "Karaage",
-    description: "Friterade kycklingbitar med ris samt sås",
-    price: "150kr",
-    image: Karaage,
-  },
-  {
-    title: "Stekt Ris med Entrecote",
-    description: "Grönsaker samt sallad ingår",
-    price: "149kr",
-    image: placeholderFood,
-  },
-  {
-    title: "Stekt Ris med Kyckling",
-    description: "Grönsaker samt sallad ingår",
-    price: "149kr",
-    image: placeholderFood,
-  },
-  {
-    title: "Stekt Ris med Räkor",
-    description: "Grönsaker samt sallad ingår",
-    price: "149kr",
-    image: placeholderFood,
-  },
-  {
-    title: "Lax Teriyaki",
-    description: "Stekt Lax med wokade grönsaker, teriyakisås samt ris",
-    price: "150kr",
-    image: Laxteriyaki,
-  },
-  {
-    title: "Vegetariska Vårrullar 7 bitar",
-    description: "Serveras med ris sallad samt sås",
-    price: "110kr",
-    image: placeholderFood,
-  },
-  {
-    title: "Vegetariska Vårrullar 10 Bitar",
-    description: "Serveras med ris sallad samt sås",
-    price: "125kr",
-    image: placeholderFood,
-  },
-];
-
-const Soppor = [
-  {
-    title: "Uddon Entrecote",
-    description: "Nudelsoppa gjord på Risnudlar, grönsaker samt entrecote",
-    price: "145kr",
-    image: UdonEntrecote,
-  },
-  {
-    title: "Uddon Tempura",
-    description:
-      "Nudelsoppa gjord på Risnudlar grönsaker samt friterade grönsaker",
-    price: "145kr",
-    image: UdonTempura,
-  },
-  {
-    title: "Uddon Vegetarisk",
-    description: "Nudelsoppa gjord på Risnudlar samt grönsaker",
-    price: "145kr",
-    image: UdonVegetarisk,
-  },
-  {
-    title: "Uddon Gyoza",
-    description:
-      "Nudelsoppa gjord på Risnudlar, grönsaker samt Gyoza (Kött eller Veg)",
-    price: "145kr",
-    image: UdonGyoza,
-  },
-  {
-    title: "Ramen Kyckling",
-    description: "Nudelsoppa gjord på äggnudlar, grönsaker och kokt ägg",
-    price: "145kr",
-    image: placeholderFood,
-  },
-  {
-    title: "Ramen Räka",
-    description: "Nudelsoppa gjord på äggnudlar, grönsaker och kokt ägg",
-    price: "145kr",
-    image: RamenRäka,
-  },
-];
-
-export default { VarmratterMeny, Soppor };
- */
