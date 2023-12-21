@@ -102,7 +102,7 @@ const MenuComponent: React.FC = () => (
   <div className="container mx-auto mt-8">
     {sushiMenu.map((category) => (
       <div key={category.name} className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">{category.name}</h2>
+        <h2 className="text-6xl font-cormorant text-golden text-center font-bold mb-4">{category.name}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {category.dishes.map((dish) => (
             <DishComponent key={dish.dishname} dish={dish} />
