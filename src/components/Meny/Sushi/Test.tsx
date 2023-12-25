@@ -8,6 +8,7 @@ type DishProps = {
     dishname: string;
     pieces?: number[];
     size?: string[];
+    types?: string[];
     prices: number[];
     images?: (number | string)[];
     description: string;
@@ -37,13 +38,16 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
   };
 
   return (
-    <div key={dish.dishname} className="bg-red-800 p-4 rounded">
+    <div key={dish.dishname} className="bg-red-800 p-4 rounded flex flex-col justify-between">
+      <section className="">
       <h3 className="text-xl font-semibold mb-2">{dish.dishname}</h3>
       {dish.images && (
         <img src={dish.images[currentImageIndex].toString()} alt={dish.dishname} />
       )}
-      <p className="text-white font-opensans mb-2">{dish.description}</p>
-      <div className="flex justify-between">
+        <p className="text-white font-opensans mb-2">{dish.description}</p>
+      </section>
+      <section className="">
+      <div className="flex justify-between flex-wrap">
         <div>
           {dish.pieces && (
             <p className="font-semibold">
@@ -93,7 +97,8 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
             ))}
           </p>
         </div>
-      </div>
+        </div>
+        </section>
     </div>
   );
 };
