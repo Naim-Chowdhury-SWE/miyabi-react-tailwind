@@ -64,7 +64,7 @@ export const Varmratter: MenuCategory = {
       },
       {
         dishname: "Bentolåda",
-        types: ["Normal", "Miyabi Bento", "Bento Deluxe", "BentoGyoza"],
+        types: ["Normal", "Miyabi Bento", "Bento Deluxe", "Bento Gyoza"],
         prices: [149, 165, 185, 149],
         images: [Bento, BentoMiyabi, BentoDeluxe, BentoGyoza],
         description: "Yakiniku, Yakitori (2 kycklingspett) samt Sushi (2 rullar, 1 lax, 1 räka)",
@@ -92,9 +92,9 @@ export const Varmratter: MenuCategory = {
       },
       {
         dishname: "Wok",
-        types: ["Kyckling", "Räkor", "Biff"],
-        prices: [145,145,149],
-        images: [WokadKyckling,WokadRäkor,WokadBiff],
+        types: ["Kyckling", "Biff", "Räkor"],
+        prices: [145, 145, 149],
+        images: [WokadKyckling,WokadBiff,WokadRäkor],
         description: "Serveras med grönsaker samt ris eller nudlar",
       },
       {

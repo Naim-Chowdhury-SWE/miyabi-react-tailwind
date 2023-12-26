@@ -57,3 +57,9 @@ html {
   letter-spacing: 0.04em;
   text-transform: capitalize;
 }
+
+.derp {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+  gap: 0.2rem;
+}

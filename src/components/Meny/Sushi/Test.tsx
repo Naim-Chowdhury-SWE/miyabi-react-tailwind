@@ -8,7 +8,7 @@ type DishProps = {
     dishname: string;
     pieces?: number[];
     size?: string[];
-    types?: string[];
+    types?: string[] | undefined;
     prices: number[];
     images?: (number | string)[];
     description: string;
@@ -22,34 +22,29 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [selectedPrice, setSelectedPrice] = useState<number | null>(null);
 
-  const handlePiecesClick = (piece: number, price: number) => {
+  const handlePiecesClick = (piece: number) => {
     if (dish.images) {
       const pieceIndex = dish.pieces?.indexOf(piece) || 0;
       setCurrentImageIndex(pieceIndex);
       setSelectedPiece(piece);
-      setSelectedSize(null);
-      setSelectedPrice(price);
     }
   };
 
-  const handleSizeClick = (size: string, price: number) => {
+  const handleSizeClick = (size: string) => {
     if (dish.images) {
       const sizeIndex = dish.size?.indexOf(size) || 0;
       setCurrentImageIndex(sizeIndex);
       setSelectedSize(size);
-      setSelectedPiece(null);
-      setSelectedPrice(price);
     }
   };
-  const handleTypeClick = (type: string, price: number) => {
+  const handleTypeClick = (type: string) => {
     if (dish.images) {
       const typeIndex = dish.types?.indexOf(type) || 0;
       setCurrentImageIndex(typeIndex);
       setSelectedType(type);
-      setSelectedPiece(null);
-      setSelectedPrice(price);
     }
   };
+  
 
   return (
     <div key={dish.dishname} className="bg-red-800 p-4 rounded flex flex-col justify-between">
@@ -62,61 +57,63 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
         </div>
         <p className="text-white font-opensans mb-2">{dish.description}</p>
       </section>
-      <section className="font-opensans">
-        {dish.types && (
-    <p className="font-semibold">Type:{" "}
+      <section className="font-opensans text-white grid grid-rows-2 gap-4 mx-1">
+        {dish.types && dish.types.length > 0 && (
+    <div className="derp">
       {dish.types.map((types, index) => (
         <span
           key={types}
-          onClick={() => handleTypeClick(types, dish.prices[index])}
+          onClick={() => handleTypeClick(types, index)}
           className={`${
-            selectedType === types ? "bg-red-800 text-white  rounded" : "transparent"
-          } p-1 cursor-pointer`}
+            selectedType === types ? "bg-red-900" : "transparent"
+          } bg-red-400 mx-1 p-1 rounded-lg text-center cursor-pointer`}
         >
           {types}{" "}
         </span>
       ))}
-    </p>
+    </div>
   )}
-    {dish.pieces && (
-    <p className="font-semibold">Pieces:{" "}
+    {dish.pieces && dish.pieces.length > 0 && (
+    <div className="derp">
       {dish.pieces.map((piece, index) => (
         <span
           key={piece}
-          onClick={() => handlePiecesClick(piece, dish.prices[index])}
+          onClick={() => handlePiecesClick(piece, index)}
           className={`${
-            selectedPiece === piece ? "bg-red-800 text-white  rounded" : "transparent"
-          } p-1 cursor-pointer`}
+            selectedPiece === piece ? "bg-red-900" : "transparent"
+          } bg-red-400 mx-1 p-1 rounded-lg text-center cursor-pointer`}
         >
-          {piece}{" "}
+          {piece}{" "} Bitar
         </span>
       ))}
-      </p>
+      </div>
   )}
-    {dish.size && (
-    <p className="font-semibold">
-      Size:{" "}
+    {dish.size && dish.size.length > 0 && (
+    <div className="derp">
       {dish.size.map((size, index) => (
         <span
           key={size}
-          onClick={() => handleSizeClick(size, dish.prices[index])}
+          onClick={() => handleSizeClick(size, index)}
           className={`${
-            selectedSize === size ? "bg-red-800 text-white rounded" : "transparent"
-          } p-1 cursor-pointer`}
+            selectedSize === size ? "bg-red-900" : "transparent"
+          } bg-red-400 mx-1 p-1 rounded-lg text-center cursor-pointer`}
         >
           {size}{" "}
         </span>
       ))}
-    </p>
-  )}
-    <p className="font-semibold">
-      Prices:{" "}
-      {dish.prices.map((price) => (
-        <span key={price} className="mr-2">
-          {price}{" "}
-        </span>
-      ))}
-    </p>
+    </div>
+          )}
+
+          <div className="derp">
+            {dish.prices.map((price) => (
+      <span key={price} className={
+        `${
+          selectedPrice === price ? "bg-red-900" : "transparent"
+      } bg-red-400 mx-1 p-1 rounded-lg text-center`}>
+        {price}kr
+      </span>
+    ))}
+          </div>
   </section>
     </div>
   );
