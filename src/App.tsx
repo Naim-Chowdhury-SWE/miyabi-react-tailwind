@@ -25,10 +25,10 @@ function App() {
       </div>
         <Header />
       <main>
-        <Lunch />
-        <Sushi />
+        {/* <Lunch />
+        <Sushi /> */}
         <div>
-      <h1 className="text-3xl font-bold text-center my-8">Sushi Restaurant Menu</h1>
+      {/* <h1 className="text-3xl font-bold text-center my-8 text-white">Sushi Restaurant Menu</h1> */}
       <MenuComponent />
     </div>
       </main>

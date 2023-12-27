@@ -2,15 +2,15 @@
 import React, { useState } from "react";
 /* import { sushiMenu } from "./Data"; */
 import { sushiMenu } from "../../../data/Meny/Menu";
-
 type DishProps = {
   dish: {
     dishname: string;
     pieces?: number[];
     size?: string[];
+    type?: string;
     prices: number[];
     images?: (number | string)[];
-    description: string;
+    description: string | string[] | undefined;
   };
 };
 
@@ -40,12 +40,12 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     <div key={dish.dishname} className="bg-red-800 p-4 rounded">
       <h3 className="text-xl font-semibold mb-2">{dish.dishname}</h3>
       {dish.images && (
-        <img src={dish.images[currentImageIndex].toString()} alt={dish.dishname} />
+        <img className="max-h-36 object-center" src={dish.images[currentImageIndex].toString()} alt={dish.dishname} />
       )}
       <p className="text-white font-opensans mb-2">{dish.description}</p>
       <div className="flex justify-between">
         <div>
-          {dish.pieces && (
+          {dish.pieces && dish.pieces.length > 0 && (
             <p className="font-semibold">
               Pieces:{" "}
               {dish.pieces.map((piece, index) => (
@@ -61,7 +61,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
               ))}
             </p>
           )}
-          {dish.size && (
+          {dish.size && dish.size.length > 0 && (
             <p className="font-semibold">
               Size:{" "}
               {dish.size.map((size, index) => (
@@ -77,9 +77,12 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
               ))}
             </p>
           )}
+          {!dish.pieces && !dish.size && dish.type && (
+            <p className="font-semibold">Type: {dish.type}</p>
+          )}
         </div>
         <div>
-        <p className="font-semibold">
+          <p className="font-semibold">
             Prices:{" "}
             {dish.prices.map((price) => (
               <span
@@ -101,8 +104,8 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
 const MenuComponent: React.FC = () => (
   <div className="container mx-auto mt-8">
     {sushiMenu.map((category) => (
-      <div key={category.name} className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">{category.name}</h2>
+      <div key={category.name} className="m-8">
+        <h2 className="text-6xl text-golden font-cormorant font-extrabold text-center mb-4">{category.name}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {category.dishes.map((dish) => (
             <DishComponent key={dish.dishname} dish={dish} />
