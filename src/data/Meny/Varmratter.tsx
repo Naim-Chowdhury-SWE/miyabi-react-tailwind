@@ -46,7 +46,7 @@ export const Varmratter: MenuCategory = {
         size: ["Normal", "Stor"],
         prices: [123, 143],
         images: [Yakiniku, Yakiniku],
-        description: "Strimlad Entrecote, serveras med ris",
+        description: "Strimlad Entrécôte, serveras med ris",
       },
       {
         dishname: "Yakitori",
@@ -60,7 +60,7 @@ export const Varmratter: MenuCategory = {
         types: [],
         prices: [159],
         images: [YakinikuSushi],
-        description: "Strimlad Entrecote, serveras med ris samt med 5 bitar blandad sushi",
+        description: "Strimlad Entrécôte, serveras med ris samt med 5 bitar blandad sushi",
       },
       {
         dishname: "Bentolåda",
@@ -113,7 +113,7 @@ export const Varmratter: MenuCategory = {
       },
       {
         dishname: "Stekt Ris med Grönsaker",
-        types: ["Entrecote", "Kyckling", "Räkor", "Tofu"],
+        types: ["Entrécôte", "Kyckling", "Räkor", "Tofu"],
         prices: [149],
         images: [StektRisEntrecote, StektRisKyckling, StektRisRäka, StektRisVeg],
         description: "Grönsaker samt sallad ingår",
@@ -141,7 +141,7 @@ export const Varmratter: MenuCategory = {
       },
       {
         dishname: "Uddon",
-        size: ["Entrecote", "Tempura", "Vegetarisk", "Gyoza"],
+        types: ["Entrecote", "Tempura", "Vegetarisk", "Gyoza"],
         prices: [145],
         images: [UdonEntrecote, UdonTempura, UdonVegetarisk, UdonGyoza],
         description: "Nudelsoppa gjord på Risnudlar, grönsaker samt entrecote",
@@ -150,7 +150,7 @@ export const Varmratter: MenuCategory = {
         dishname: "Ramen",
         types: ["Kyckling", "Räka"],
         prices: [145],
-        images: [placeholderFood],
+        images: [placeholderFood, placeholderFood],
         description: "Nudelsoppa gjord på äggnudlar, grönsaker och kokt ägg",
       },
     ]

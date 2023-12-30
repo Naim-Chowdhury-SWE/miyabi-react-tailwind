@@ -1,6 +1,5 @@
 // MenuComponent.tsx
 import React, { useState } from "react";
-/* import { sushiMenu } from "./Data"; */
 import { sushiMenu } from "../../../data/Meny/Menu";
 type DishProps = {
   dish: {
@@ -16,47 +15,58 @@ type DishProps = {
 
 const DishComponent: React.FC<DishProps> = ({ dish }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [selectedPiece, setSelectedPiece] = useState<number | null>(null);
-  const [selectedSize, setSelectedSize] = useState<string | null>(null);
-  const [selectedType, setSelectedType] = useState<string | null>(null);
-  const [selectedPrice, setSelectedPrice] = useState<number | null>(null);
+  const [selectedPiece, setSelectedPiece] = useState<number | null>(dish.pieces?.[0] || null);
+  const [selectedSize, setSelectedSize] = useState<string | null>(dish.size?.[0] || null);
+  const [selectedType, setSelectedType] = useState<string | null>(dish.types?.[0] || null);
+  const [selectedPrice, setSelectedPrice] = useState<number | null>(
+    dish.prices.length > 0 ? dish.prices[0] : null
+  );
 
-  const handlePiecesClick = (piece: number) => {
+  const handlePiecesClick = (piece: number, index: number) => {
     if (dish.images) {
-      const pieceIndex = dish.pieces?.indexOf(piece) || 0;
-      setCurrentImageIndex(pieceIndex);
+      setCurrentImageIndex(index);
       setSelectedPiece(piece);
+      setSelectedSize(null);
+      setSelectedType(null);
+      setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
     }
   };
 
-  const handleSizeClick = (size: string) => {
+  const handleSizeClick = (size: string, index: number) => {
     if (dish.images) {
-      const sizeIndex = dish.size?.indexOf(size) || 0;
-      setCurrentImageIndex(sizeIndex);
+      setCurrentImageIndex(index);
       setSelectedSize(size);
+      setSelectedPiece(null);
+      setSelectedType(null);
+      setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
     }
   };
-  const handleTypeClick = (type: string) => {
-    if (dish.images) {
-      const typeIndex = dish.types?.indexOf(type) || 0;
-      setCurrentImageIndex(typeIndex);
-      setSelectedType(type);
-    }
-  };
-  
 
+  const handleTypeClick = (type: string, index: number) => {
+    if (dish.images) {
+      setCurrentImageIndex(index);
+      setSelectedType(type);
+      setSelectedPiece(null);
+      setSelectedSize(null);
+      setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
+    }
+  };
+
+  // Filter out duplicate prices
+  const uniquePrices = [...new Set(dish.prices)];
   return (
     <div key={dish.dishname} className="bg-red-800 p-4 rounded flex flex-col justify-between">
       <section className="">
         <div className="flex flex-col">
-      <h3 className="text-2xl font-bold font-cormorant text-white mb-2">{dish.dishname}</h3>
-      {dish.images && (
-        <img className="min-h-40 max-h-64" src={dish.images[currentImageIndex].toString()} alt={dish.dishname} />
+          <h3 className="text-2xl font-bold font-cormorant text-white mb-2">{dish.dishname}</h3>
+          {dish.images && (
+            <img className="min-h-40 max-h-64" src={dish.images[currentImageIndex].toString()} alt={dish.dishname} />
           )}
         </div>
         <p className="text-white font-opensans mb-2">{dish.description}</p>
       </section>
       <section className="font-opensans text-white grid grid-rows-2 gap-4 mx-1">
+        
         {dish.types && dish.types.length > 0 && (
     <div className="derp">
       {dish.types.map((types, index) => (
@@ -103,17 +113,19 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     </div>
           )}
 
-          <div className="derp">
-            {dish.prices.map((price) => (
-      <span key={price} className={
-        `${
-          selectedPrice === price ? "bg-red-900" : "transparent"
-      } bg-red-400 mx-1 p-1 rounded-lg text-center`}>
-        {price}kr
-      </span>
-    ))}
-          </div>
-  </section>
+<div className="derp">
+          {uniquePrices.map((price) => (
+            <span
+              key={price}
+              className={`${
+                selectedPrice === price ? "bg-red-900" : "hidden"
+              } bg-red-400 mx-1 p-1 rounded-lg text-center cursor-pointer`}
+            >
+              {price}kr
+            </span>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
