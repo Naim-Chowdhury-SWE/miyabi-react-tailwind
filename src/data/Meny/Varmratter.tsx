@@ -134,16 +134,9 @@ export const Varmratter: MenuCategory = {
       },
       {
         dishname: "Bibimbap",
-        types: ["Entrécôte", "Kyckling", "Räkor"],
+        types: ["Entrécôte", "Kyckling", "Räkor","Lax (rå)", "Tofu", "Mix"],
         prices: [139],
-        images: [BibimbapEntrecote, BibimbapKyckling, BibimbapRäka],
-        description: "Koreansk rätt som innehåller ris, olika typer av sallader, kimchi och starksås. Toppas med ett stekt ägg",
-      },
-      {
-        dishname: "Bibimbap",
-        types: ["Lax (rå)", "Tofu", "Mix"],
-        prices: [139],
-        images: [BibimbapLax, BibimbapTofu, BibimbapMix],
+        images: [BibimbapEntrecote, BibimbapKyckling, BibimbapRäka, BibimbapLax, BibimbapTofu, BibimbapMix],
         description: "Koreansk rätt som innehåller ris, olika typer av sallader, kimchi och starksås. Toppas med ett stekt ägg",
       },
       {
@@ -154,15 +147,8 @@ export const Varmratter: MenuCategory = {
         description: "Nudelsoppa gjord på Risnudlar, grönsaker samt entrecote",
       },
       {
-        dishname: "Ramen Kyckling",
-        size: [],
-        prices: [145],
-        images: [placeholderFood],
-        description: "Nudelsoppa gjord på äggnudlar, grönsaker och kokt ägg",
-      },
-      {
-        dishname: "Ramen Räka",
-        size: [],
+        dishname: "Ramen",
+        types: ["Kyckling", "Räka"],
         prices: [145],
         images: [placeholderFood],
         description: "Nudelsoppa gjord på äggnudlar, grönsaker och kokt ägg",

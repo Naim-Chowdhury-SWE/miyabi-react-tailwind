@@ -3,7 +3,7 @@ export type Dish = {
   dishname: string;
   types?: string[];
     pieces?: number[];
-  sizes?: string[];
+  size?: string[];
     type?: string[];
     prices: number[];
     images?: number[] | string[];
