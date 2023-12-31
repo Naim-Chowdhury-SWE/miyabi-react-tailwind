@@ -1,6 +1,6 @@
 // MenuComponent.tsx
 import React, { useState } from "react";
-import { sushiMenu } from "../../../data/Meny/Menu";
+import { Meny } from "../../../data/Meny/Menu";
 type DishProps = {
   dish: {
     dishname: string;
@@ -73,7 +73,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     <div
     className={`${
       dish.types.length < 4 ? 'flex justify-center items-center' : 'grid'
-    } grid-cols-${Math.min(4, dish.types.length)} gap-0`}
+    } grid-cols-4 gap-0`}
   >
     {dish.types.map((types, index) => (
         <span
@@ -92,7 +92,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     <div
     className={`${
       dish.pieces.length < 4 ? 'flex justify-center items-center' : 'grid'
-    } grid-cols-${Math.min(4, dish.pieces.length)} gap-0`}
+    } grid-cols-4 gap-0`}
   >
             {dish.pieces.map((piece, index) => (
         <span
@@ -111,7 +111,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     <div
     className={`${
       dish.size.length < 4 ? 'flex justify-center items-center' : 'grid'
-    } grid-cols-${Math.min(4, dish.size.length)} gap-0`}
+    } grid-cols-4 gap-0`}
   >
       {dish.size.map((size, index) => (
         <span
@@ -146,7 +146,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
 
 const MenuComponent: React.FC = () => (
   <div className="container mx-auto mt-8">
-    {sushiMenu.map((category) => (
+    {Meny.map((category) => (
       <div key={category.name} className="mb-8">
         <h2 className="text-6xl font-cormorant text-golden text-center font-bold mb-4">{category.name}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-8">
