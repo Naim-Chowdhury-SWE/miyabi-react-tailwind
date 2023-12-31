@@ -59,13 +59,13 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       <section className="p-2 h-full">
         <div className="flex flex-col">
           <div className="p-1 h-20">
-            <h3 className="text-2xl font-bold font-cormorant text-white mb-2">{dish.dishname}</h3>
+            <h3 className="text-2xl text-center font-bold font-cormorant text-white mb-2">{dish.dishname}</h3>
           </div>
           {dish.images && (
             <img className="min-h-40 max-h-64" src={dish.images[currentImageIndex].toString()} alt={dish.dishname} />
           )}
         </div>
-        <p className="text-white font-opensans my-2">{dish.description}</p>
+        <p className="text-white text-center font-opensans my-2">{dish.description}</p>
       </section>
       <section className="font-opensans text-white">
         
