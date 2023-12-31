@@ -51,9 +51,8 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
     }
   };
-
-  // Filter out duplicate prices
   const uniquePrices = [...new Set(dish.prices)];
+  
   return (
     <div key={dish.dishname} className="rounded border-2 border-red-800 flex flex-col justify-between w-full">
       <section className="p-2 h-full">
@@ -67,6 +66,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
         </div>
         <p className="text-white text-center font-opensans my-2">{dish.description}</p>
       </section>
+
       <section className="font-opensans text-white">
         
         {dish.types && dish.types.length > 0 && (
@@ -160,53 +160,3 @@ const MenuComponent: React.FC = () => (
 );
 
 export default MenuComponent;
-{/* <div className="flex justify-between flex-wrap">
-<div>
-  {dish.pieces && (
-    <p className="font-semibold">Pieces:{" "}
-      {dish.pieces.map((piece, index) => (
-        <span
-          key={piece}
-          onClick={() => handlePiecesClick(piece, dish.prices[index])}
-          className={`${
-            selectedPiece === piece ? "bg-red-800 text-white  rounded" : "transparent"
-          } p-1 cursor-pointer`}
-        >
-          {piece}{" "}
-        </span>
-      ))}
-    </p>
-  )}
-  {dish.size && (
-    <p className="font-semibold">
-      Size:{" "}
-      {dish.size.map((size, index) => (
-        <span
-          key={size}
-          onClick={() => handleSizeClick(size, dish.prices[index])}
-          className={`${
-            selectedSize === size ? "bg-red-800 text-white rounded" : "transparent"
-          } p-1 cursor-pointer`}
-        >
-          {size}{" "}
-        </span>
-      ))}
-    </p>
-  )}
-</div>
-<div>
-<p className="font-semibold">
-    Prices:{" "}
-    {dish.prices.map((price) => (
-      <span
-        key={price}
-        className={`${
-          selectedPrice === price ? "bg-red-800 text-white rounded" : "transparent"
-        } p-1`}
-      >
-        {price}{" "}
-      </span>
-    ))}
-  </p>
-</div>
-</div>" */}
