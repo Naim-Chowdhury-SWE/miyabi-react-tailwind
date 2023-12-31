@@ -52,6 +52,12 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     }
   };
   const uniquePrices = [...new Set(dish.prices)];
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleImageClick = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   
   return (
     <div key={dish.dishname} className="rounded border-2 border-red-800 flex flex-col justify-between w-full">
@@ -61,14 +67,29 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
             <h3 className="text-2xl text-center font-bold font-cormorant text-white mb-2">{dish.dishname}</h3>
           </div>
           {dish.images && (
-            <img className="min-h-40 max-h-64" src={dish.images[currentImageIndex].toString()} alt={dish.dishname} />
+            <img
+              className="min-h-32 max-h-48 cursor-pointer"
+              onClick={handleImageClick}
+              src={dish.images[currentImageIndex].toString()}
+              alt={dish.dishname}
+            />
           )}
         </div>
         <p className="text-white text-center font-opensans my-2">{dish.description}</p>
       </section>
 
-      <section className="font-opensans text-white">
-        
+      {isModalOpen && (
+        <dialog open className="fixed inset-0 bg-black bg-opacity-75">
+          <img
+            className="cursor-pointer p-52"
+            onClick={handleImageClick}
+            src={dish.images[currentImageIndex].toString()}
+            alt={dish.dishname}
+          />
+        </dialog>
+      )}
+
+      <section className="font-opensans text-white">     
         {dish.types && dish.types.length > 0 && (
     <div
     className={`${
