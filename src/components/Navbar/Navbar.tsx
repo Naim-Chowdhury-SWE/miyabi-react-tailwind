@@ -22,6 +22,19 @@ const Navbar = () => {
     setIsDropdownOpen(false);
     setIsContactDropdownOpen(false);
   };
+  const handleScroll = () => {
+    closeDropdowns();
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleLinkClick = () => {
+    closeDropdowns();
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -67,7 +80,7 @@ const Navbar = () => {
         </ul>
       </div>
       {isDropdownOpen && isDropdownEnabled && (
-        <div className="w-full z-40 overflow-auto">
+        <div className="w-full z-40 overflow-auto" onClick={handleLinkClick}>
           <ul className="text-center text-black font-semibold mt-8">
               <li className="hover:bg-red-900 hover:text-white transition duration-300">
                 <a href="tel:+46763043985">Ring och Beställ</a>
@@ -90,13 +103,16 @@ const Navbar = () => {
               <br />
             <li className="my-2 hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer">Meny</li>
             <br />
-              <li className="my-2 hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer" onClick={toggleContactDropdown}>Kontakt</li>
+              {/* <li className="my-2 hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer" onClick={toggleContactDropdown}>Kontakt</li> */}
             </ul>
         </div>
       )}
-       {isContactDropdownOpen && (
-        <div className="text-black font-bold flex justify-center lg:mt-2">
-          <address className="absolute bg-red-800 w-full lg:w-1/5 lg:p-4">
+      {isDropdownOpen && isDropdownEnabled && (
+          <p className="my-2 hover:bg-red-900 font-semibold text-center hover:text-white transition duration-300 cursor-pointer" onClick={toggleContactDropdown}>Kontakt</p>
+      )}
+       {isContactDropdownOpen && isDropdownEnabled && (
+        <div className="text-black font-bold w-full z-40 overflow-auto p-4" onClick={handleLinkClick}>
+          <address className="bg-red-800 w-full lg:w-1/5 lg:p-4">
             <a className="flex flex-col items-center" href="tel:+46763043985">
             <BsTelephoneFill />
               <p className="top-4">076-304 39 85</p>

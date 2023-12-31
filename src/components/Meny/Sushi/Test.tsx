@@ -55,27 +55,33 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
   // Filter out duplicate prices
   const uniquePrices = [...new Set(dish.prices)];
   return (
-    <div key={dish.dishname} className="bg-red-800 p-4 rounded flex flex-col justify-between">
-      <section className="">
+    <div key={dish.dishname} className="rounded border-2 border-red-800 flex flex-col justify-between w-full">
+      <section className="p-2 h-full">
         <div className="flex flex-col">
-          <h3 className="text-2xl font-bold font-cormorant text-white mb-2">{dish.dishname}</h3>
+          <div className="p-1 h-20">
+            <h3 className="text-2xl font-bold font-cormorant text-white mb-2">{dish.dishname}</h3>
+          </div>
           {dish.images && (
             <img className="min-h-40 max-h-64" src={dish.images[currentImageIndex].toString()} alt={dish.dishname} />
           )}
         </div>
-        <p className="text-white font-opensans mb-2">{dish.description}</p>
+        <p className="text-white font-opensans my-2">{dish.description}</p>
       </section>
-      <section className="font-opensans text-white grid grid-rows-2 gap-4 mx-1">
+      <section className="font-opensans text-white">
         
         {dish.types && dish.types.length > 0 && (
-    <div className="derp">
-      {dish.types.map((types, index) => (
+    <div
+    className={`${
+      dish.types.length < 4 ? 'flex justify-center items-center' : 'grid'
+    } grid-cols-${Math.min(4, dish.types.length)} gap-0`}
+  >
+    {dish.types.map((types, index) => (
         <span
           key={types}
           onClick={() => handleTypeClick(types, index)}
           className={`${
             selectedType === types ? "bg-red-900" : "transparent"
-          } bg-red-400 mx-1 p-1 rounded-lg text-center cursor-pointer`}
+          } mx-1 p-1 rounded-lg text-center cursor-pointer`}
         >
           {types}{" "}
         </span>
@@ -83,14 +89,18 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     </div>
   )}
     {dish.pieces && dish.pieces.length > 0 && (
-    <div className="derp">
-      {dish.pieces.map((piece, index) => (
+    <div
+    className={`${
+      dish.pieces.length < 4 ? 'flex justify-center items-center' : 'grid'
+    } grid-cols-${Math.min(4, dish.pieces.length)} gap-0`}
+  >
+            {dish.pieces.map((piece, index) => (
         <span
           key={piece}
           onClick={() => handlePiecesClick(piece, index)}
           className={`${
             selectedPiece === piece ? "bg-red-900" : "transparent"
-          } bg-red-400 mx-1 p-1 rounded-lg text-center cursor-pointer`}
+          } mx-1 p-1 rounded-lg text-center cursor-pointer`}
         >
           {piece}{" "} Bitar
         </span>
@@ -98,14 +108,18 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       </div>
   )}
     {dish.size && dish.size.length > 0 && (
-    <div className="derp">
+    <div
+    className={`${
+      dish.size.length < 4 ? 'flex justify-center items-center' : 'grid'
+    } grid-cols-${Math.min(4, dish.size.length)} gap-0`}
+  >
       {dish.size.map((size, index) => (
         <span
           key={size}
           onClick={() => handleSizeClick(size, index)}
           className={`${
             selectedSize === size ? "bg-red-900" : "transparent"
-          } bg-red-400 mx-1 p-1 rounded-lg text-center cursor-pointer`}
+          } mx-1 p-1 rounded-lg text-center cursor-pointer`}
         >
           {size}{" "}
         </span>
@@ -113,13 +127,13 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     </div>
           )}
 
-<div className="derp">
+<div className="flex flex-col items-center">
           {uniquePrices.map((price) => (
             <span
               key={price}
               className={`${
                 selectedPrice === price ? "bg-red-900" : "hidden"
-              } bg-red-400 mx-1 p-1 rounded-lg text-center cursor-pointer`}
+              } bg-red-400 my-4 p-1 rounded-lg text-center cursor-pointer`}
             >
               {price}kr
             </span>

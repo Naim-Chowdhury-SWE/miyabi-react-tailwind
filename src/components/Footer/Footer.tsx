@@ -8,7 +8,7 @@ const Footer = () => {
       <footer className="text-white font-opensans font-semibold lg:text-lg">
       <img src={logo.logo3} alt="Miyabi Logo" className="m-4 lg:scale-50" />
       
-        <address className="flex justify-between items-center m-2 lg:mx-12 lg:px-10">
+        <address id="contact" className="flex justify-between items-center m-2 lg:mx-12 lg:px-10">
           <section className="">
             <a
               href="https://maps.app.goo.gl/jVynK1HvdsJKrXAx5"
