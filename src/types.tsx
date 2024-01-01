@@ -1,13 +1,13 @@
 // types.tsx
 export type Dish = {
-  dishname: string;
+  dishname: string | string[];
   types?: string[];
-    pieces?: number[];
+  pieces?: number[];
   size?: string[];
-    type?: string[];
-    prices: number[];
-    images?: number[] | string[];
-    description: string;
+  type?: string[];
+  prices: number[];
+  images?: number[] | string[];
+  description: string | string[];
   };
   
   export type MenuCategory = {

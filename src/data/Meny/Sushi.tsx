@@ -28,7 +28,6 @@ import FamiljeSushi50 from "../../assets/food/FamiljeSushi50.webp";
 import FamiljeSushi70 from "../../assets/food/FamiljeSushi70.webp";
 import { MenuCategory } from "../../types";
 
-// Define individual arrays for each category
 export const Sushi: MenuCategory = {
   name: "Sushi Meny",
   dishes: [
@@ -37,7 +36,7 @@ export const Sushi: MenuCategory = {
       pieces: [7,8,9,11,13,14,16,20],
       prices: [89, 99, 109, 129,149, 159, 179, 219],
       images: [BlandadSushi7, BlandadSushi8, BlandadSushi9, BlandadSushi11, BlandadSushi13, BlandadSushi14, BlandadSushi16, BlandadSushi20],
-      description: "Blandad Sushi med många olikatyper av sushibitar.",
+      description: ["Blandad Sushi med många olika typer av sushibitar."]
     },
     {
       dishname: "Lax & Rullar",

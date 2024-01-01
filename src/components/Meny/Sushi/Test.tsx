@@ -1,9 +1,9 @@
 // MenuComponent.tsx
 import React, { useState } from "react";
-import { Meny } from "../../../data/Meny/Menu";
+import { Meny } from "../../../data/Meny/Meny";
 type DishProps = {
   dish: {
-    dishname: string;
+    dishname: string | string[];
     pieces?: number[];
     size?: string[];
     types?: string[] | undefined;
