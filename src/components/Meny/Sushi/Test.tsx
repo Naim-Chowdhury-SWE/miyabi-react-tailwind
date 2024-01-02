@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { Meny } from "../../../data/Meny/Meny";
 type DishProps = {
   dish: {
-    dishname: string | string[];
+    dishname: string[];
     pieces?: number[];
     size?: string[];
     types?: string[] | undefined;
     prices: number[];
-    images?: (number | string)[];
+    images?: (number | string)[] | undefined;
     description: string | string[] | undefined;
   };
 };
@@ -22,6 +22,13 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     dish.prices.length > 0 ? dish.prices[0] : null
   );
 
+  const [selectedDishName, setSelectedDishName] = useState<string | null>(
+    dish.dishname.length > 0 ? dish.dishname[0] : null
+  );
+  const [selectedDescription, setSelectedDescription] = useState<string | null>(
+    dish.description?.length > 0 ? dish.description[0] : null
+  );
+
   const handlePiecesClick = (piece: number, index: number) => {
     if (dish.images) {
       setCurrentImageIndex(index);
@@ -29,6 +36,8 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       setSelectedSize(null);
       setSelectedType(null);
       setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
+      setSelectedDishName(dish.dishname.length === 1 ? dish.dishname[0] : dish.dishname[index]);
+      setSelectedDescription(dish.description?.length === 1 ? dish.description[0] : dish.description?.[index]);
     }
   };
 
@@ -39,6 +48,8 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       setSelectedPiece(null);
       setSelectedType(null);
       setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
+      setSelectedDishName(dish.dishname.length === 1 ? dish.dishname[0] : dish.dishname[index]);
+      setSelectedDescription(dish.description?.length === 1 ? dish.description[0] : dish.description?.[index]);
     }
   };
 
@@ -49,8 +60,11 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       setSelectedPiece(null);
       setSelectedSize(null);
       setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
+      setSelectedDishName(dish.dishname.length === 1 ? dish.dishname[0] : dish.dishname[index]);
+      setSelectedDescription(dish.description?.length === 1 ? dish.description[0] : dish.description?.[index]);
     }
   };
+
   const uniquePrices = [...new Set(dish.prices)];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -60,22 +74,22 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
   };
   
   return (
-    <div key={dish.dishname} className="rounded border-2 border-red-800 flex flex-col justify-between w-full">
-      <section className="p-2 h-full">
+    <div key={dish.dishname[0]} className="rounded border-2 border-red-800 flex flex-col justify-between w-full">
+      <section className="p-2">
         <div className="flex flex-col">
           <div className="p-1 h-20">
-            <h3 className="text-2xl text-center font-bold font-cormorant text-white mb-2">{dish.dishname}</h3>
+            <h3 className="text-2xl text-center font-bold font-cormorant text-white mb-2">{selectedDishName}</h3>
           </div>
           {dish.images && (
             <img
               className="min-h-32 max-h-48 cursor-pointer"
               onClick={handleImageClick}
               src={dish.images[currentImageIndex].toString()}
-              alt={dish.dishname}
+              alt={selectedDishName}
             />
           )}
         </div>
-        <p className="text-white text-center font-opensans my-2">{dish.description}</p>
+        <p className="text-white h-16 text-center font-opensans my-2">{selectedDescription}</p>
       </section>
 
       {isModalOpen && (
