@@ -1,24 +1,31 @@
-import images from "../../constants/images";
+import BarnYakiniku from "../../assets/food/BarnYakiniku.webp";
+import BarnYakitori from "../../assets/food/BarnYakitori.webp";
+import BarnKaraage from "../../assets/food/BarnKaraage.webp";
+import { MenuCategory } from "../../types";
 
-const BarnMeny = [
-  {
-    title: "Yakiniku",
-    description: "Strimlad Entrecote, serveras med ris",
-    price: "89kr",
-    image: images.BarnYakiniku,
-  },
-  {
-    title: "Yakitori",
-    description: "Kycklingspett med yakitorisås, serveras med ris",
-    price: "89kr",
-    image: images.BarnYakitori,
-  },
-  {
-    title: "Karaage",
-    description: "Friterade kycklingbitar med ris samt sås",
-    price: "89kr",
-    image: images.BarnKaraage,
-  },
-];
-
-export default { BarnMeny };
+export const Barn: MenuCategory = {
+  name: "Barn Meny",
+  dishes: [
+    {
+      dishname: ["Yakiniku"],
+      types: [""],
+      prices: [89],
+      images: [BarnYakiniku],
+      description: ["Strimlad Entrecote, serveras med ris"],
+    },
+    {
+      dishname: ["Yakitori"],
+      types: [""],
+      prices: [89],
+      images: [BarnYakitori],
+      description: ["Kycklingspett med yakitorisås, serveras med ris"],
+    },
+    {
+      dishname: ["Karaage"],
+      types: [""],
+      prices: [89],
+      images: [BarnKaraage],
+      description: ["Friterade kycklingbitar med ris samt sås"],
+    },
+  ],
+};
