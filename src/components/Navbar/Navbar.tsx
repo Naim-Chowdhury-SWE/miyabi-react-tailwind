@@ -61,7 +61,7 @@ const Navbar = () => {
             <li className="m-4">Meny</li>
           </div>
           <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
-            <li className="m-4" onClick={toggleContactDropdown}>Kontakta Oss</li>
+            <li className="m-4"><a href="contact"> Kontakta Oss</a></li>
           </div>
           <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
           <li className="m-4"><a
@@ -103,7 +103,6 @@ const Navbar = () => {
               <br />
             <li className="my-2 hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer">Meny</li>
             <br />
-              {/* <li className="my-2 hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer" onClick={toggleContactDropdown}>Kontakt</li> */}
             </ul>
         </div>
       )}
