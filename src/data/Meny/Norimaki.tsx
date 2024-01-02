@@ -1,5 +1,6 @@
 
 import placeholderMaki from "../../assets/food/maki.jpg";
+
 import StandardRoll from "../../assets/food/StandardRoll.webp";
 import CaliforniaRoll from "../../assets/food/CaliforniaRoll.webp";
 import CaliforniaRollSpecial from "../../assets/food/CaliforniaRollSpecial.webp";
@@ -19,6 +20,7 @@ import DragonRoll from "../../assets/food/DragonRoll.webp";
 import CrispyMiyabiRoll from "../../assets/food/CrispyMiyabiRoll.webp";
 import CrispyAlaskaRoll from "../../assets/food/CrispyAlaskaRoll.webp";
 import CrispyTempuraRoll from "../../assets/food/CrispyTempuraRoll.webp";
+import CrispyVegetariskRoll from "../../assets/food/CrispyVegetariskRoll.webp";
 import SpicytunaRoll from "../../assets/food/SpicytunaRoll.webp";
 import KaraageRoll from "../../assets/food/KaraageRoll.webp";
 import YakinikuRoll from "../../assets/food/YakinikuRoll.webp";
@@ -45,7 +47,7 @@ export const Norimaki: MenuCategory = {
       dishname: ["Vegetarisk roll", "Vegetarisk roll med mango", "Crispy Vegetarisk Roll"],
       types: ["Normal", "Mango Roll", "Crispy"],
       prices: [105,120,159],
-      images: [VegetariskRoll,VegetariskMangoRoll,placeholderMaki],
+      images: [VegetariskRoll,VegetariskMangoRoll,CrispyVegetariskRoll],
       description: ["Sjögräsrulle med gurka och avocado", "Sjögräsrulle med gurka, avocado och mango", "Avokado, krispig sallad, tofu och veganmajonnäs. Rullen friteras" ],
     },
     {
@@ -116,7 +118,7 @@ export const Norimaki: MenuCategory = {
       types: ["Friterad", "Crispy"],
       prices: [145, 149],
       images: [MiyabiSpecialRoll, CrispyMiyabiRoll],
-      description: ["Friterad Sjögräsrulle med lax, gurka och krabba samt chilimajo", "Friterad Sjögräsrulle med Avokado, marinerad lax, krispig sallad och chilimajonnäs"],
+      description: ["Friterad Sjögräsrulle med lax, gurka och krabba samt chilimajo", "Friterad Sjögräsrulle med Marinerad lax, Avocado, krispig sallad och chilimajonnäs"],
     },
     {
       dishname: ["Karageroll"],
