@@ -4,6 +4,8 @@ import Yakisoba from "../assets/food/Yakisoba.webp";
 import WokadKyckling from "../assets/food/WokadKyckling.webp";
 import Karaage from "../assets/food/Karaage.webp";
 
+const test = "Test";
+
 export const Lunch = {
   name:"Lunch Meny",
   dishes: [
