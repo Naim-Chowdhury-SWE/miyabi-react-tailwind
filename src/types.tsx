@@ -1,5 +1,6 @@
 // types.tsx
 export type Dish = {
+  id: number
   dishname: string[];
   types?: string[];
   pieces?: number[];

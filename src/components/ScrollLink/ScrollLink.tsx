@@ -1,5 +1,5 @@
-function ScrollLink({ targetId, children }) {
-  const handleLinkClick = (event) => {
+const ScrollLink: React.FC<{ targetId: string; children: React.ReactNode }> = ({ targetId, children }) => {
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
     const section = document.getElementById(targetId);
     if (section) {

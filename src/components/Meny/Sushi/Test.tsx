@@ -38,7 +38,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       setSelectedType(null);
       setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
       setSelectedDishName(dish.dishname.length === 1 ? dish.dishname[0] : dish.dishname[index]);
-      setSelectedDescription(dish.description?.length === 1 ? dish.description[0] : dish.description?.[index]);
+      setSelectedDescription((dish.description || [])[0] || null);
     }
   };
 
@@ -50,7 +50,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       setSelectedType(null);
       setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
       setSelectedDishName(dish.dishname.length === 1 ? dish.dishname[0] : dish.dishname[index]);
-      setSelectedDescription(dish.description?.length === 1 ? dish.description[0] : dish.description?.[index]);
+      setSelectedDescription((dish.description || [])[0] || null);
     }
   };
 
@@ -62,7 +62,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       setSelectedSize(null);
       setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
       setSelectedDishName(dish.dishname.length === 1 ? dish.dishname[0] : dish.dishname[index]);
-      setSelectedDescription(dish.description?.length === 1 ? dish.description[0] : dish.description?.[index]);
+      setSelectedDescription((dish.description || [])[0] || null);
     }
   };
 
@@ -93,13 +93,13 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
         <p className="text-white h-16 text-center font-opensans my-2">{selectedDescription}</p>
       </section>
 
-      {isModalOpen && (
+      {isModalOpen && dish.images && dish.images.length > 0 && (
         <dialog open className="fixed inset-0 bg-black bg-opacity-75">
           <img
             className="cursor-pointer p-52"
             onClick={handleImageClick}
-            src={dish.images[currentImageIndex].toString()}
-            alt={dish.dishname}
+            src={dish.images[currentImageIndex]?.toString()}
+      alt={dish.dishname[0]}
           />
         </dialog>
       )}
@@ -185,9 +185,9 @@ const MenuComponent: React.FC = () => (
     {Meny.map((category) => (
       <div key={category.name} className="mb-8">
         <h2 className="text-6xl font-cormorant text-golden text-center font-bold mb-4">{category.name}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-8">
+        <div className={category.dishes.length < 4 ? "flex mx-8 gap-8" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-8"}>
           {category.dishes.map((dish) => (
-            <DishComponent key={dish.dishname} dish={dish} />
+            <DishComponent key={dish.id} dish={dish} />
           ))}
         </div>
       </div>

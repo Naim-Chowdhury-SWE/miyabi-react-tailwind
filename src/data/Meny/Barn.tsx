@@ -7,6 +7,7 @@ export const Barn: MenuCategory = {
   name: "Barn Meny",
   dishes: [
     {
+      id: 1,
       dishname: ["Yakiniku"],
       types: [""],
       prices: [89],
@@ -14,6 +15,7 @@ export const Barn: MenuCategory = {
       description: ["Strimlad Entrecote, serveras med ris"],
     },
     {
+      id: 2,
       dishname: ["Yakitori"],
       types: [""],
       prices: [89],
@@ -21,6 +23,7 @@ export const Barn: MenuCategory = {
       description: ["Kycklingspett med yakitorisås, serveras med ris"],
     },
     {
+      id: 3,
       dishname: ["Karaage"],
       types: [""],
       prices: [89],

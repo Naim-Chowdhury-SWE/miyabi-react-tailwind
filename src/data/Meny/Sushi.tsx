@@ -35,6 +35,7 @@ export const Sushi: MenuCategory = {
   name: "Sushi Meny",
   dishes: [
     {
+      id: 1,
       dishname: ["Blandad Sushi"],
       pieces: [7,8,9,11,13,14,16,20],
       prices: [89, 99, 109, 129,149, 159, 179, 219],
@@ -42,6 +43,7 @@ export const Sushi: MenuCategory = {
       description: ["Blandad Sushi med många olika typer av sushibitar."]
     },
     {
+      id: 2,
       dishname: ["Lax & Rullar"],
       pieces: [8,10,12],
       prices: [99, 119, 139],
@@ -49,6 +51,7 @@ export const Sushi: MenuCategory = {
       description: ["Blandad Sushi som innehåller Rullar och Lax."],
     },
     {
+      id: 3,
       dishname: ["Vegetarisk Sushi"],
       pieces: [10,12],
       prices: [109, 129],
@@ -56,6 +59,7 @@ export const Sushi: MenuCategory = {
       description: ["Blandad sushi som innehåller Vegetariska rullar, Avocado och Tofu"],
     },
     {
+      id: 4,
       dishname: ["Mamma Sushi"],
       pieces: [10, 12],
       prices: [109, 135],
@@ -63,6 +67,7 @@ export const Sushi: MenuCategory = {
       description: ["Blandad sushi men utan råfisk"],
     },
     {
+      id: 5,
       dishname: ["Blandad Nigiri (utan rullar)"],
       pieces: [9, 12],
       prices: [119, 150],
@@ -70,6 +75,7 @@ export const Sushi: MenuCategory = {
       description: ["Blandad sushi men utan rullar"],
     },
     {
+      id: 6,
       dishname: ["Pappa Lyx (utan rullar)"],
       pieces: [12],
       prices: [160],
@@ -77,6 +83,7 @@ export const Sushi: MenuCategory = {
       description: ["Endast blandat med olika fisksorter"],
     },
     {
+      id: 7,
       dishname: ["Lax Sushi"],
       pieces: [8, 10, 12],
       prices: [120, 140, 160],
@@ -84,6 +91,7 @@ export const Sushi: MenuCategory = {
       description: ["Laxsushi"],
     },
     {
+      id: 8,
       dishname: ["Lax & Avocado Sushi"],
       pieces: [8, 10, 12],
       prices: [115, 125, 145],
@@ -91,6 +99,7 @@ export const Sushi: MenuCategory = {
       description: ["Hälften lax och hälften avocado"],
     },
     {
+      id: 9,
       dishname: ["Lax & Räkor Sushi"],
       pieces: [8, 10, 12],
       prices: [115, 130, 150],
@@ -98,6 +107,7 @@ export const Sushi: MenuCategory = {
       description: ["Hälften lax & hälften räkor"],
     },
     {
+      id: 10,
       dishname: ["Avocado Sushi"],
       pieces: [8, 10, 12],
       prices: [105, 125, 140],
@@ -105,6 +115,7 @@ export const Sushi: MenuCategory = {
       description: ["Avocadosushi"],
     },
     {
+      id: 11,
       dishname: ["Räksushi"],
       pieces: [8, 10, 12],
       prices: [120, 139, 160],
@@ -112,6 +123,7 @@ export const Sushi: MenuCategory = {
       description: ["Sushiräkor"],
     },
     {
+      id: 12,
       dishname: ["Grillad Lax med chilimajo"],
       pieces: [8, 10, 12],
       prices: [135, 155, 175],
@@ -119,6 +131,7 @@ export const Sushi: MenuCategory = {
       description: ["Grillad laxsushi som toppas med chilimajonäs"],
     },
     {
+      id: 13,
       dishname: ["Familjesushi"],
       pieces: [30, 40, 50, 70],
       prices: [329, 429, 529, 729],

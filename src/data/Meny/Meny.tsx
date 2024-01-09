@@ -1,8 +1,11 @@
 // menuData.tsx
+import {Lunch} from "./Lunch";
 import {Sushi} from "./Sushi";
-import {Varmratter} from "./Varmratter";
 import {Norimaki} from "./Norimaki";
+import {Sashimi} from "./Sashimi";
+import {Varmratter} from "./Varmratter";
+import {Special} from "./Special";
 import {Barn} from "./Barn";
 import { MenuCategory } from "../../types";
 
-export const Meny: MenuCategory[] = [Sushi, Norimaki, Varmratter, Barn];
+export const Meny: MenuCategory[] = [Lunch, Sushi, Norimaki, Sashimi, Varmratter, Special, Barn];

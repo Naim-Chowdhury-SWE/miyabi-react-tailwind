@@ -1,86 +1,64 @@
-import images from "../../constants/images";
+import WokadKycklingStark from "../../assets/food/WokadKycklingStark.webp";
+import WokadRäkorStark from "../../assets/food/WokadRäkorStark.webp";
+import KokosmjölkKyckling from "../../assets/food/KokosmjölkKyckling.webp";
+import KokosmjölkRäka from "../../assets/food/KokosmjölkRäka.webp";
+import PadThaiKyckling from "../../assets/food/PadThaiKyckling.webp";
+import PadThaiRäka from "../../assets/food/PadThaiRäka.webp";
+import placeholderFood from "../../assets/food/food.svg";
+import { MenuCategory } from "../../types";
 
-const SpecialMeny = [
-  {
-    title: "Wokad Kyckling med grön curry (stark)",
-    description: "Serveras med ris eller nudlar samt sallad",
-    price: "150 kr",
-    image: images.placeholderFood,
-  },
-  {
-    title: "Wokad Räkor med grön curry (stark)",
-    description: "Serveras med ris eller nudlar samt sallad",
-    price: "150 kr",
-    image: images.placeholderFood,
-  },
-  {
-    title: "Wokad Biff med grön curry (stark)",
-    description: "Serveras med ris eller nudlar samt sallad",
-    price: "150 kr",
-    image: images.placeholderFood,
-  },
-  {
-    title: "Stekt lax med curry (stark)",
-    description: "Serveras med ris samt sallad",
-    price: "150 kr",
-    image: images.placeholderFood,
-  },
-  {
-    title: "Wokad Kyckling med ostronsås",
-    description: "Smak av Thailand, Serveras med ris eller nudlar samt sallad",
-    price: "150 kr",
-    image: images.placeholderFood,
-  },
-  {
-    title: "Bibimbap: Entrecote / Kyckling / Räkor eller Rå Lax",
-    description:
-      "Koreansk rätt som innehåller antingen Entrecote, Kyckling, Räkor eller Rå Lax. Stark sås ingår. Toppas med ett stekt ägg och serveras med ris, olika typer av sallader och kimchi",
-    price: "139 kr",
-    image: images.placeholderFood,
-  },
-  {
-    title: "Bibimbap Mix (Entrecote + kyckling + Räkor)",
-    description:
-      "Koreansk rätt som innehåller Entrecote, Kyckling och Räkor samt stark sås. Toppas med ett stekt ägg och serveras med ris, olika typer av sallader och kimchi",
-    price: "159 kr",
-    image: images.placeholderFood,
-  },
-  {
-    title: "Wokad kyckling (stark)",
-    description: "Stark smak ris/nudlar (cashew + 5kr)",
-    price: "150 kr",
-    image: images.WokadKycklingStark,
-  },
-  {
-    title: "Wokade räkor (stark)",
-    description: "Stark smak ris/nudlar (cashew + 5kr)",
-    price: "150 kr",
-    image: images.WokadRäkorStark,
-  },
-  {
-    title: "Wokade räkor + kyckling (stark)",
-    description: "Stark smak ris/nudlar (cashew + 5kr)",
-    price: "165 kr",
-    image: images.placeholderFood,
-  },
-  {
-    title: "Wokad biff (stark)",
-    description: "Stark smak ris (cashew + 5kr)",
-    price: "150 kr",
-    image: images.placeholderFood,
-  },
-  {
-    title: "Pad Thai Kyckling",
-    description: "Wokade Risnudlar med Kyckling, Grönsaker och Sallad",
-    price: "150 kr",
-    image: images.placeholderFood,
-  },
-  {
-    title: "Pad Thai Räkor",
-    description: "Wokade Risnudlar med Räkor, Grönsaker och Sallad",
-    price: "150 kr",
-    image: images.placeholderFood,
-  },
-];
+const text1 = "Serveras med ris eller nudlar samt sallad";
 
-export default { SpecialMeny };
+export const Special: MenuCategory = {
+  name: "Special Meny",
+  dishes: [
+    {
+      id: 1,
+      dishname: ["Wok med grön curry (stark)"],
+      types: ["Kyckling", "Räkor", "Biff", "Lax"],
+      prices: [150],
+      images: [placeholderFood,placeholderFood,placeholderFood,placeholderFood],
+      description: [text1,text1,text1, "Serveras med ris samt sallad"],
+    },
+    {
+      id: 1,
+      dishname: ["Wok med kokosmjölk och curry (stark)"],
+      types: ["Kyckling", "Räkor"],
+      prices: [150],
+      images: [KokosmjölkKyckling,KokosmjölkRäka],
+      description: [text1,text1,],
+    },
+    {
+      id: 5,
+      dishname: ["Wokad Kyckling med ostronsås"],
+      types: ["Kyckling", "Räkor", "Biff"],
+      prices: [150],
+      images: [placeholderFood, placeholderFood, placeholderFood],
+      description: [text1],
+    },
+    {
+      id: 8,
+      dishname: ["Wok med chili (stark)"],
+      types: ["Kyckling", "Räkor", "Biff"],
+      prices: [150],
+      images: [WokadKycklingStark,WokadRäkorStark,placeholderFood],
+      description: [text1 + "(cashew + 5kr)"],
+    },
+    {
+      id: 10,
+      dishname: ["Wokade räkor + kyckling (stark)"],
+      types: [],
+      prices: [165],
+      images: [placeholderFood],
+      description: [text1 + "(cashew + 5kr)"],
+    },
+    {
+      id: 12,
+      dishname: ["Pad Thai Kyckling"],
+      types: ["Kyckling", "Räkor"],
+      prices: [150],
+      images: [PadThaiKyckling, PadThaiRäka],
+      description: ["Wokade Risnudlar med Kyckling, Grönsaker och Sallad"],
+    },
+  ],
+};

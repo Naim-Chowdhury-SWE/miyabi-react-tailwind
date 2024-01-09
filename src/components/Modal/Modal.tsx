@@ -1,7 +1,13 @@
+/* 
 
-import Modal from 'react-modal';
+interface ImageModalProps {
+  image: string;
+  title: string;
+  isOpen: boolean;
+  onRequestClose: () => void;
+}
 
-const ImageModal = ({ image, title, isOpen, onRequestClose }) => {
+const ImageModal : React.FC<ImageModalProps>  = ({ image, title, isOpen, onRequestClose }) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -21,3 +27,4 @@ const ImageModal = ({ image, title, isOpen, onRequestClose }) => {
 };
 
 export default ImageModal;
+ */
