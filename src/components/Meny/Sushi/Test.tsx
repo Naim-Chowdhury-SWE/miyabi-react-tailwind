@@ -26,7 +26,8 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     dish.dishname.length > 0 ? dish.dishname[0] : null
   );
   const [selectedDescription, setSelectedDescription] = useState<string | null>(
-    dish.description?.length > 0 ? dish.description[0] : null
+    (dish.description || []).length > 0 ? dish.description![0] : null
+
   );
 
   const handlePiecesClick = (piece: number, index: number) => {
@@ -85,7 +86,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
               className="min-h-32 max-h-48 cursor-pointer"
               onClick={handleImageClick}
               src={dish.images[currentImageIndex].toString()}
-              alt={selectedDishName}
+              alt={selectedDishName || ""}
             />
           )}
         </div>

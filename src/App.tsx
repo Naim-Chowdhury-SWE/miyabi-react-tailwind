@@ -1,14 +1,19 @@
 import Navbar from "./components/Navbar/Navbar"
 import Header from "./components/Header/Header";
-import Lunch from "./components/Meny/Lunch/Lunch";
+/* import Lunch from "./components/Meny/Lunch/Lunch";
 import Sushi from "./components/Meny/Sushi/Sushi";
-import Norimaki from "./components/Meny/Norimaki/Norimaki";
+import Norimaki from "./components/Meny/Norimaki/Norimaki"; */
 import MenuComponent from "./components/Meny/Sushi/Test";
 import Footer from "./components/Footer/Footer"
 import Carousel from "./components/Carousel/Carousel"
+import {EmblaCarouselProps} from "./types"
 
-
-const OPTIONS = {};
+const OPTIONS: EmblaCarouselProps['options'] = {
+  loop: true,
+  startIndex: 0,
+  draggable: true,
+  speed: 500,
+};
 const SLIDE_COUNT = 6;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 function App() {

@@ -15,3 +15,12 @@ export type Dish = {
     dishes: Dish[];
   };
   
+  export interface EmblaCarouselProps {
+    slides: number[];
+    options: {
+      loop: boolean;
+      startIndex: number;
+      draggable: boolean;
+      speed: number;
+    };
+  }

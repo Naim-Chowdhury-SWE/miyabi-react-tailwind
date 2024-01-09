@@ -2,8 +2,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { images } from "../../data/CarouselData";
 import "./Carousel.css";
+import {EmblaCarouselProps} from "../../types"
 
-const EmblaCarousel = (props) => {
+function EmblaCarousel(props: EmblaCarouselProps) {
   const { slides, options } = props;
   const [emblaRef] = useEmblaCarousel(options, [Autoplay()]);
 
@@ -28,6 +29,6 @@ const EmblaCarousel = (props) => {
       </div>
     </div>
   );
-};
+}
 
 export default EmblaCarousel;

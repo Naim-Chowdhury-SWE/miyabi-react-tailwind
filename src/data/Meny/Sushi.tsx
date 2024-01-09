@@ -28,8 +28,8 @@ import FamiljeSushi50 from "../../assets/food/FamiljeSushi50.webp";
 import FamiljeSushi70 from "../../assets/food/FamiljeSushi70.webp";
 import { MenuCategory } from "../../types";
 
-const messageBlandadSushiLiten = "Blandad Sushi med många olika typer av sushibitar.";
-const messageBlandadSushiStor = "Blandad Sushi med många olika typer av sushibitar.";
+/* const messageBlandadSushiLiten = "Blandad Sushi med många olika typer av sushibitar.";
+const messageBlandadSushiStor = "Blandad Sushi med många olika typer av sushibitar."; */
 
 export const Sushi: MenuCategory = {
   name: "Sushi Meny",
