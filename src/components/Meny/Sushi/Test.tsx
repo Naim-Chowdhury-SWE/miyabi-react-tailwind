@@ -1,5 +1,5 @@
 // MenuComponent.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Meny } from "../../../data/Meny/Meny";
 import {DishProps} from "../../../types"
 
@@ -11,13 +11,11 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
   const [selectedPrice, setSelectedPrice] = useState<number | null>(
     dish.prices.length > 0 ? dish.prices[0] : null
   );
-
   const [selectedDishName, setSelectedDishName] = useState<string | null>(
     dish.dishname.length > 0 ? dish.dishname[0] : null
   );
   const [selectedDescription, setSelectedDescription] = useState<string | null>(
     (dish.description || []).length > 0 ? dish.description![0] : null
-
   );
 
   const handlePiecesClick = (piece: number, index: number) => {
@@ -60,10 +58,54 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   
-
   const handleImageClick = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  /* useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        handleModalClose();
+      } else if (event.key === "ArrowLeft") {
+        handlePrevImage();
+      } else if (event.key === "ArrowRight") {
+        handleNextImage();
+      }
+    };
+    const handlePrevImage = () => {
+      setCurrentImageIndex((prevIndex) => {
+        const newIndex = (prevIndex - 1 + dish.images.length) % dish.images.length;
+        setSelectedDishName(dish.dishname[newIndex]);
+        setSelectedSize(dish.size?.[newIndex] || null);
+        setSelectedType(dish.types?.[newIndex] || null);
+        setSelectedPiece(dish.pieces?.[newIndex] || null);
+        setSelectedPrice(dish.prices?.[newIndex] || null);
+        return newIndex;
+      });
+    };
+
+    const handleNextImage = () => {
+      setCurrentImageIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % dish.images.length;
+        setSelectedDishName(dish.dishname[newIndex]);
+        setSelectedSize(dish.size?.[newIndex] || null);
+        setSelectedType(dish.types?.[newIndex] || null);
+        setSelectedPiece(dish.pieces?.[newIndex] || null);
+        setSelectedPrice(dish.prices?.[newIndex] || null);
+        return newIndex;
+      });
+    };
+ 
+  
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []); */
   
   return (
     <div key={dish.dishname[0]} className="rounded border-2 border-red-800 flex flex-col justify-between w-full">
@@ -85,15 +127,27 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       </section>
 
       {isModalOpen && dish.images && dish.images.length > 0 && (
-        <dialog open className="fixed inset-0 bg-black bg-opacity-75">
-          <img
-            className="cursor-pointer p-52"
-            onClick={handleImageClick}
-            src={dish.images[currentImageIndex]?.toString()}
-      alt={dish.dishname[0]}
-          />
-        </dialog>
-      )}
+  <dialog open className="fixed inset-0 min-h-full min-w-full bg-black bg-opacity-90" onClick={handleModalClose}>
+    <div className="container relative mx-auto my-auto border-2 border-blue-400">
+      <img
+        className="cursor-pointer mt-28"
+        onClick={handleImageClick}
+        src={dish.images[currentImageIndex]?.toString()}
+        alt={dish.dishname[0]}
+      />
+      <div className="absolute bottom-4 right-4 bg-red-900 rounded-lg p-1 text-white font-cormorant text-center">
+        <p className="text-md md:text-1xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold">
+          {selectedDishName}
+        </p>
+        {selectedType || selectedPiece || selectedSize ? (
+    <p className="text-xs md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold">
+      {selectedType || (selectedPiece ? selectedPiece + " Bitar" : null) || selectedSize}
+    </p>
+  ) : null}
+      </div>
+    </div>
+  </dialog>
+)}
 
       <section className="font-opensans text-white">     
         {dish.types && dish.types.length > 0 && (
@@ -161,9 +215,6 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
             <span
               key={price}
               className={`${selectedPrice === price ? "bg-red-900" : "transparent"} mx-1 p-1 rounded-lg`}
-              /* className={`${
-                selectedPrice === price ? "bg-red-900" : "hidden"
-              } bg-red-400 my-4 p-1 rounded-lg text-center cursor-pointer`} */
             >
               {price}kr
             </span>

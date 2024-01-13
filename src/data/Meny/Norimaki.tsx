@@ -55,7 +55,7 @@ export const Norimaki: MenuCategory = {
     },
     {
       id: 4,
-      dishname: ["Spicy Tuna/Lax roll"],
+      dishname: ["Spicy Tuna roll","Spicy Lax roll"],
       types: ["Tuna", "Lax"],
       prices: [145],
       images: [SpicytunaRoll, SpicytunaRoll],
@@ -63,7 +63,7 @@ export const Norimaki: MenuCategory = {
     },
     {
       id: 5,
-      dishname: ["Crispy Spicy Tuna/Lax Roll"],
+      dishname: ["Crispy Spicy Tuna Roll", "Crispy Spicy Lax Roll"],
       types: ["Tuna", "Lax"],
       prices: [169],
       images: [placeholderMaki, placeholderMaki],

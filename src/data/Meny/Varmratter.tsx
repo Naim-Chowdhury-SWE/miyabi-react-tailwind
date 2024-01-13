@@ -66,7 +66,7 @@ export const Varmratter: MenuCategory = {
       },
       {
         id: 4,
-        dishname: ["Bentolåda"],
+        dishname: ["Bentolåda", "Miyabi Bento", "Bento Deluxe", "Bento Gyoza"],
         types: ["Normal", "Miyabi Bento", "Bento Deluxe", "Bento Gyoza"],
         prices: [149, 165, 185, 149],
         images: [Bento, BentoMiyabi, BentoDeluxe, BentoGyoza],
@@ -98,7 +98,7 @@ export const Varmratter: MenuCategory = {
       },
       {
         id: 8,
-        dishname: ["Wok"],
+        dishname: ["Wokad Kyckling", "Wokad Biff", "Wokad Räkor"],
         types: ["Kyckling", "Biff", "Räkor"],
         prices: [145, 145, 149],
         images: [WokadKyckling,WokadBiff,WokadRäkor],
