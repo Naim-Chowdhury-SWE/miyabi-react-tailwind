@@ -9,7 +9,19 @@ export type Dish = {
   prices: number[];
   images?: number[] | string[];
   description: string | string[] | undefined;
+};
+  
+export type DishProps = {
+  dish: {
+    dishname: string[];
+    pieces?: number[];
+    size?: string[];
+    types?: string[] | undefined;
+    prices: number[];
+    images?: (number | string)[] | undefined;
+    description: string | string[] | undefined;
   };
+};
   
   export type MenuCategory = {
     name: string;

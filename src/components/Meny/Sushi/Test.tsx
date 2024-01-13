@@ -1,17 +1,7 @@
 // MenuComponent.tsx
 import React, { useState } from "react";
 import { Meny } from "../../../data/Meny/Meny";
-type DishProps = {
-  dish: {
-    dishname: string[];
-    pieces?: number[];
-    size?: string[];
-    types?: string[] | undefined;
-    prices: number[];
-    images?: (number | string)[] | undefined;
-    description: string | string[] | undefined;
-  };
-};
+import {DishProps} from "../../../types"
 
 const DishComponent: React.FC<DishProps> = ({ dish }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -69,6 +59,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
   const uniquePrices = [...new Set(dish.prices)];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
   const handleImageClick = () => {
     setIsModalOpen(!isModalOpen);
@@ -163,13 +154,16 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     </div>
           )}
 
-<div className="flex flex-col items-center">
+<div className={`${
+  uniquePrices.length < 4 ? "flex flex-row flex-wrap gap-x-6 mx-2 my-4 justify-center" : "grid grid-cols-4 gap-0 text-center justify-center m-2"
+}`}>
           {uniquePrices.map((price) => (
             <span
               key={price}
-              className={`${
+              className={`${selectedPrice === price ? "bg-red-900" : "transparent"} mx-1 p-1 rounded-lg`}
+              /* className={`${
                 selectedPrice === price ? "bg-red-900" : "hidden"
-              } bg-red-400 my-4 p-1 rounded-lg text-center cursor-pointer`}
+              } bg-red-400 my-4 p-1 rounded-lg text-center cursor-pointer`} */
             >
               {price}kr
             </span>
@@ -185,7 +179,7 @@ const MenuComponent: React.FC = () => (
     {Meny.map((category) => (
       <div key={category.name} className="mb-8">
         <h2 className="text-6xl font-cormorant text-golden text-center font-bold mb-4">{category.name}</h2>
-        <div className={category.dishes.length < 4 ? "flex mx-8 gap-8" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-8"}>
+        <div className={category.dishes.length < 4 ? "flex mx-8 gap-8 max-w-fit" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mx-8"}>
           {category.dishes.map((dish) => (
             <DishComponent key={dish.id} dish={dish} />
           ))}

@@ -4,13 +4,13 @@ import PokebowlKyckling from "../../assets/food/PokebowlKyckling.webp"
 import PokebowlTofu from "../../assets/food/PokebowlTofu.webp"
 import { MenuCategory } from "../../types";
 
-export const PokeBowl: MenuCategory = {
-  name: "PokéBowls",
+export const Pokebowl: MenuCategory = {
+  name: "Poké Bowls",
   dishes: [
     {
       id: 1,
-      dishname: ["Pokébowl Lax & Tonfisk"],
-      type: [],
+      dishname: ["Poké bowl Lax & Tonfisk"],
+      types: [],
       prices: [139],
       images: [PokebowlLax],
       description: [
@@ -19,8 +19,8 @@ export const PokeBowl: MenuCategory = {
     },
     {
       id: 2,
-      dishname: ["Pokébowl Räkor"],
-      type: [],
+      dishname: ["Poké bowl Räkor"],
+      types: [],
       prices: [139],
       images: [PokebowlRäka],
       description: [
@@ -29,8 +29,8 @@ export const PokeBowl: MenuCategory = {
     },
     {
       id: 3,
-      dishname: ["Pokébowl Kyckling"],
-      type: [],
+      dishname: ["Poké bowl Kyckling"],
+      types: [],
       prices: [139],
       images: [PokebowlKyckling],
       description: [
@@ -39,8 +39,8 @@ export const PokeBowl: MenuCategory = {
     },
     {
       id: 4,
-      dishname: ["Pokébowl Tofu"],
-      type: [],
+      dishname: ["Poké bowl Tofu"],
+      types: [],
       prices: [139],
       images: [PokebowlTofu],
       description: [
