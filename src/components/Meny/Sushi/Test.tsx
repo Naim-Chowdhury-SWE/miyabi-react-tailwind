@@ -1,5 +1,5 @@
 // MenuComponent.tsx
-import React, { useState, useEffect } from "react";
+import React, { useState, /* useEffect */ } from "react";
 import { Meny } from "../../../data/Meny/Meny";
 import {DishProps} from "../../../types"
 
@@ -109,14 +109,14 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
   
   return (
     <div key={dish.dishname[0]} className="rounded border-2 border-red-800 flex flex-col justify-between w-full">
-      <section className="p-2">
+      <section className="">
         <div className="flex flex-col">
-          <div className="p-1 h-20">
+          <div className="h-20">
             <h3 className="text-2xl text-center font-bold font-cormorant text-white mb-2">{selectedDishName}</h3>
           </div>
           {dish.images && (
             <img
-              className="min-h-32 max-h-48 cursor-pointer"
+              className="max-h-fit cursor-pointer"
               onClick={handleImageClick}
               src={dish.images[currentImageIndex].toString()}
               alt={selectedDishName || ""}
@@ -127,25 +127,29 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       </section>
 
       {isModalOpen && dish.images && dish.images.length > 0 && (
-  <dialog open className="fixed inset-0 min-h-full min-w-full bg-black bg-opacity-90" onClick={handleModalClose}>
-    <div className="container relative mx-auto my-auto border-2 border-blue-400">
+  <dialog open className="fixed inset-0 min-h-full min-w-fit bg-black bg-opacity-90" onClick={handleModalClose}>
+      <section className="border-2 border-green-600 mt-16 flex flex-col items-center">
+          <div className="border-2 border-blue-400 mt-24 lg:mt-24 xl:mt-12 flex flex-col">
       <img
-        className="cursor-pointer mt-28"
+        className="cursor-pointer lg:mx-52"
         onClick={handleImageClick}
         src={dish.images[currentImageIndex]?.toString()}
         alt={dish.dishname[0]}
-      />
-      <div className="absolute bottom-4 right-4 bg-red-900 rounded-lg p-1 text-white font-cormorant text-center">
-        <p className="text-md md:text-1xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold">
+              />
+              </div>
+              {/* </section>
+            <section className=""> */}
+      <div className="bg-red-900 max-w-fit rounded-lg p-1 text-white font-cormorant font-bold text-center">
+        <p className="text-md md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           {selectedDishName}
         </p>
         {selectedType || selectedPiece || selectedSize ? (
-    <p className="text-xs md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold">
+    <p className="text-xs md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">
       {selectedType || (selectedPiece ? selectedPiece + " Bitar" : null) || selectedSize}
     </p>
   ) : null}
-      </div>
-    </div>
+              </div>
+              </section>
   </dialog>
 )}
 
@@ -229,12 +233,14 @@ const MenuComponent: React.FC = () => (
   <div className="container mx-auto mt-8">
     {Meny.map((category) => (
       <div key={category.name} className="mb-8">
+        <section className="flex flex-col items-center border-2 border-yellow-400 m-8 lg:m-0">
         <h2 className="text-6xl font-cormorant text-golden text-center font-bold mb-4">{category.name}</h2>
-        <div className={category.dishes.length < 4 ? "flex mx-8 gap-8 max-w-fit" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mx-8"}>
+        <div className={category.dishes.length < 4 ? "flex flex-col lg:flex-row justify-center gap-8 border-2 border-blue-700 max-w-fit" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8"}>
           {category.dishes.map((dish) => (
             <DishComponent key={dish.id} dish={dish} />
           ))}
-        </div>
+          </div>
+          </section>
       </div>
     ))}
   </div>
