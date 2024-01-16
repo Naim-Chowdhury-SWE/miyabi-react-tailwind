@@ -32,8 +32,8 @@ import { MenuCategory } from "../../types";
 const messageBlandadSushiStor = "Blandad Sushi med många olika typer av sushibitar."; */
 
 export const Sushi: MenuCategory = {
-  name: "Sushi Meny",
   id: "sushi",
+  name: "Sushi Meny",
   dishes: [
     {
       id: 1,

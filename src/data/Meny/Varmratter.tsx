@@ -38,6 +38,7 @@ import BibimbapMix from "../../assets/food/BibimbapMix.webp";
 import { MenuCategory } from "../../types";
 
 export const Varmratter: MenuCategory = {
+  id: "varmratter",
   name: "Varmrätter",
   dishes:
     [

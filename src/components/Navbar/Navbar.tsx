@@ -2,6 +2,8 @@ import { FaLocationDot } from "react-icons/fa6";
 import { BsTelephoneFill } from "react-icons/bs";
 import logo from "../../data/logos";
 import { useState, useEffect } from 'react';
+import SmoothScroll from "../ScrollLink/ScrollLink";
+import { Meny } from "../../data/Meny/Meny";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -56,18 +58,20 @@ const Navbar = () => {
         <img src={logo.miyabitextblack} alt="Miyabi Logo" className="h-12 lg:h-24 m-auto float-left" />
           <img src={logo.fanblack} alt="Side Menu button" className="h-12 lg:m-6 p-auto float-right lg:hidden cursor-pointer" onClick={toggleDropdown} />
       <div className="justify-center hidden lg:flex p-4">
-        <ul className="flex items-center mx-4 text-black font-bold">
-          <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
-            <li className="m-4">Meny</li>
-            <ul className="hidden">
-      <li>Lunch</li>
-      <li>Sushi</li>
-      <li>Norimaki</li>
-      <li>Sashimi</li>
-      <li>Varmrätter</li>
-      <li>Special</li>
-      <li>Barn</li>
-            </ul>
+      <ul className="flex items-center mx-4 text-black font-bold">
+        <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
+          <li className="m-4" onClick={toggleDropdown}>
+            Meny
+            <ul className={` ${isDropdownOpen ? 'block' : 'hidden'}`}>
+            {Meny.map((category) => (
+              <li key={category.name}>
+                <SmoothScroll targetId={`category-${category.id}`} onClick={closeDropdowns}>
+                  {category.name}
+                </SmoothScroll>
+              </li>
+            ))}
+          </ul>
+              </li>
           </div>
           <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
             <li className="m-4"><a href="contact"> Kontakta Oss</a></li>

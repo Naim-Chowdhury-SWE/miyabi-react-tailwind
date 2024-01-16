@@ -6,12 +6,13 @@ interface ScrollLinkProps {
   onClick?: () => void;
 }
 
-const ScrollLink: React.FC<ScrollLinkProps> = ({ targetId, children }) => {
+const SmoothScroll: React.FC<{ targetId: string; onClick: () => void; children: React.ReactNode }> = ({ targetId, onClick, children }) => {
   const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
     const section = document.getElementById(targetId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: 'smooth' });
+      onClick();
     }
   };
 
@@ -20,5 +21,6 @@ const ScrollLink: React.FC<ScrollLinkProps> = ({ targetId, children }) => {
       {children}
     </a>
   );
-}
-export default ScrollLink;
+};
+
+export default SmoothScroll;
