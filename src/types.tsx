@@ -23,7 +23,8 @@ export type DishProps = {
   };
 };
   
-  export type MenuCategory = {
+export type MenuCategory = {
+    id: string,
     name: string;
     dishes: Dish[];
   };

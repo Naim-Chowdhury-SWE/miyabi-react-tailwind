@@ -59,6 +59,15 @@ const Navbar = () => {
         <ul className="flex items-center mx-4 text-black font-bold">
           <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
             <li className="m-4">Meny</li>
+            <ul className="hidden">
+      <li>Lunch</li>
+      <li>Sushi</li>
+      <li>Norimaki</li>
+      <li>Sashimi</li>
+      <li>Varmrätter</li>
+      <li>Special</li>
+      <li>Barn</li>
+            </ul>
           </div>
           <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
             <li className="m-4"><a href="contact"> Kontakta Oss</a></li>

@@ -22,6 +22,7 @@ import { MenuCategory } from "../../types";
 
 
 export const Lunch: MenuCategory = {
+  id: "lunch",
   name:"Lunch Meny",
   dishes: [
     {

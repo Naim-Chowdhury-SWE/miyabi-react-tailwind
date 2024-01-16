@@ -27,6 +27,7 @@ import YakinikuRoll from "../../assets/food/YakinikuRoll.webp";
 import { MenuCategory } from "../../types";
 
 export const Norimaki: MenuCategory = {
+  id:"norimaki",
   name: "Norimaki Meny",
   dishes: [
     {

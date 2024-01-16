@@ -5,6 +5,7 @@ import PokebowlTofu from "../../assets/food/PokebowlTofu.webp"
 import { MenuCategory } from "../../types";
 
 export const Pokebowl: MenuCategory = {
+  id:"pokebowl",
   name: "Poké Bowls",
   dishes: [
     {

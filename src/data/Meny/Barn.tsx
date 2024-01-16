@@ -4,6 +4,7 @@ import BarnKaraage from "../../assets/food/BarnKaraage.webp";
 import { MenuCategory } from "../../types";
 
 export const Barn: MenuCategory = {
+  id: "barn",
   name: "Barn Meny",
   dishes: [
     {

@@ -8,6 +8,7 @@ import placeholderSashimi from "../../assets/food/sashimi.jpg"
 import { MenuCategory } from "../../types";
 
 export const Sashimi: MenuCategory = {
+  id: "sashimi",
   name: "Sashimi Meny",
   dishes: [
     {

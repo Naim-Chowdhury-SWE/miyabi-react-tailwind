@@ -10,6 +10,7 @@ import { MenuCategory } from "../../types";
 const text1 = "Serveras med ris eller nudlar samt sallad";
 
 export const Special: MenuCategory = {
+  id:"special",
   name: "Special Meny",
   dishes: [
     {

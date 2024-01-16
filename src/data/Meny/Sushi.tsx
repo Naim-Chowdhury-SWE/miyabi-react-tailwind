@@ -33,6 +33,7 @@ const messageBlandadSushiStor = "Blandad Sushi med många olika typer av sushibi
 
 export const Sushi: MenuCategory = {
   name: "Sushi Meny",
+  id: "sushi",
   dishes: [
     {
       id: 1,
