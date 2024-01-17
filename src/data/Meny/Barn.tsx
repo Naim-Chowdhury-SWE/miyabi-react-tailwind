@@ -1,6 +1,6 @@
-import BarnYakiniku from "../../assets/food/BarnYakiniku.webp";
-import BarnYakitori from "../../assets/food/BarnYakitori.webp";
-import BarnKaraage from "../../assets/food/BarnKaraage.webp";
+import BarnYakiniku from "../../assets/food/barn/BarnYakiniku.webp";
+import BarnYakitori from "../../assets/food/barn/BarnYakitori.webp";
+import BarnKaraage from "../../assets/food/barn/BarnKaraage.webp";
 import { MenuCategory } from "../../types";
 
 export const Barn: MenuCategory = {

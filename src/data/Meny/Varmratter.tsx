@@ -1,40 +1,40 @@
-import placeholderFood from "../../assets/food/food.svg";
+import Yakitori from "../../assets/food/varmratter/Yakitori.webp";
+import Yakiniku from "../../assets/food/varmratter/Yakiniku.webp";
+import YakinikuSushi from "../../assets/food/varmratter/YakinikuSushi.webp";
 
-import Yakitori from "../../assets/food/Yakitori.webp";
-import Yakiniku from "../../assets/food/Yakiniku.webp";
-import YakinikuSushi from "../../assets/food/YakinikuSushi.webp";
+import Bento from "../../assets/food/varmratter/Bento.webp";
+import BentoMiyabi from "../../assets/food/varmratter/BentoMiyabi.webp";
+import BentoDeluxe from "../../assets/food/varmratter/BentoDeluxe.webp";
+import BentoGyoza from "../../assets/food/varmratter/BentoGyoza.webp";
 
-import Bento from "../../assets/food/Bento.webp";
-import BentoMiyabi from "../../assets/food/BentoMiyabi.webp";
-import BentoDeluxe from "../../assets/food/BentoDeluxe.webp";
-import BentoGyoza from "../../assets/food/BentoGyoza.webp";
+import Gyoza from "../../assets/food/varmratter/Gyoza.webp";
+import Yakisoba from "../../assets/food/varmratter/Yakisoba.webp";
+import WokadKyckling from "../../assets/food/varmratter/WokadKyckling.webp";
+import WokadBiff from "../../assets/food/varmratter/WokadBiff.webp";
+import WokadRäkor from "../../assets/food/varmratter/WokadRäkor.webp";
+import StektRisVeg from "../../assets/food/varmratter/StektRisVeg.webp";
+import StektRisKyckling from "../../assets/food/varmratter/StektRisKyckling.webp";
+import StektRisRäka from "../../assets/food/varmratter/StektRisRäka.webp";
+import StektRisEntrecote from "../../assets/food/varmratter/StektRisEntrecote.webp";
+import Tempura from "../../assets/food/varmratter/Tempura.webp";
+import Karaage from "../../assets/food/varmratter/Karaage.webp";
+import Laxteriyaki from "../../assets/food/varmratter/Laxteriyaki.webp";
+import Vårrullar7 from "../../assets/food/varmratter/Vårrullar7.webp";
+import Vårrullar10 from "../../assets/food/varmratter/Vårrullar10.webp";
 
-import Gyoza from "../../assets/food/Gyoza.webp";
-import Yakisoba from "../../assets/food/Yakisoba.webp";
-import WokadKyckling from "../../assets/food/WokadKyckling.webp";
-import WokadBiff from "../../assets/food/WokadBiff.webp";
-import WokadRäkor from "../../assets/food/WokadRäkor.webp";
-import StektRisVeg from "../../assets/food/StektRisVeg.webp";
-import StektRisKyckling from "../../assets/food/StektRisKyckling.webp";
-import StektRisRäka from "../../assets/food/StektRisRäka.webp";
-import StektRisEntrecote from "../../assets/food/StektRisEntrecote.webp";
-import Tempura from "../../assets/food/Tempura.webp";
-import Karaage from "../../assets/food/Karaage.webp";
-import Laxteriyaki from "../../assets/food/Laxteriyaki.webp";
-import Vårrullar7 from "../../assets/food/Vårrullar7.webp";
-import Vårrullar10 from "../../assets/food/Vårrullar10.webp";
+import UdonEntrecote from "../../assets/food/varmratter/UdonEntrecote.webp";
+import UdonVegetarisk from "../../assets/food/varmratter/UdonVegetarisk.webp";
+import UdonTempura from "../../assets/food/varmratter/UdonTempura.webp";
+import UdonGyoza from "../../assets/food/varmratter/UdonGyoza.webp";
+import RamenKyckling from "../../assets/food/varmratter/RamenKyckling.webp";
+import RamenRäka from "../../assets/food/varmratter/RamenRäka.webp";
 
-import UdonEntrecote from "../../assets/food/UdonEntrecote.webp";
-import UdonVegetarisk from "../../assets/food/UdonVegetarisk.webp";
-import UdonTempura from "../../assets/food/UdonTempura.webp";
-import UdonGyoza from "../../assets/food/UdonGyoza.webp";
-
-import BibimbapEntrecote from "../../assets/food/BibimbapEntrecote.webp";
-import BibimbapKyckling from "../../assets/food/BibimbapKyckling.webp";
-import BibimbapRäka from "../../assets/food/BibimbapRäka.webp";
-import BibimbapLax from "../../assets/food/BibimbapLax.webp";
-import BibimbapTofu from "../../assets/food/BibimbapTofu.webp";
-import BibimbapMix from "../../assets/food/BibimbapMix.webp";
+import BibimbapEntrecote from "../../assets/food/varmratter/BibimbapEntrecote.webp";
+import BibimbapKyckling from "../../assets/food/varmratter/BibimbapKyckling.webp";
+import BibimbapRäka from "../../assets/food/varmratter/BibimbapRäka.webp";
+import BibimbapLax from "../../assets/food/varmratter/BibimbapLax.webp";
+import BibimbapTofu from "../../assets/food/varmratter/BibimbapTofu.webp";
+import BibimbapMix from "../../assets/food/varmratter/BibimbapMix.webp";
 import { MenuCategory } from "../../types";
 
 export const Varmratter: MenuCategory = {
@@ -166,7 +166,7 @@ export const Varmratter: MenuCategory = {
         dishname: ["Ramen"],
         types: ["Kyckling", "Räka"],
         prices: [145],
-        images: [placeholderFood, placeholderFood],
+        images: [RamenKyckling, RamenRäka],
         description: ["Nudelsoppa gjord på äggnudlar, grönsaker och kokt ägg"],
       },
     ]

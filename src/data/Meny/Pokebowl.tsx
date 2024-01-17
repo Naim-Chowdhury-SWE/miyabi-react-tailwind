@@ -1,7 +1,7 @@
-import PokebowlLax from "../../assets/food/PokebowlLax.webp"
-import PokebowlRäka from "../../assets/food/PokebowlRäka.webp"
-import PokebowlKyckling from "../../assets/food/PokebowlKyckling.webp"
-import PokebowlTofu from "../../assets/food/PokebowlTofu.webp"
+import PokebowlLax from "../../assets/food/pokebowl/PokebowlLax.webp"
+import PokebowlRäka from "../../assets/food/pokebowl/PokebowlRäka.webp"
+import PokebowlKyckling from "../../assets/food/pokebowl/PokebowlKyckling.webp"
+import PokebowlTofu from "../../assets/food/pokebowl/PokebowlTofu.webp"
 import { MenuCategory } from "../../types";
 
 export const Pokebowl: MenuCategory = {

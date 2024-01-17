@@ -1,10 +1,10 @@
-import SashimiLaxLiten from "../../assets/food/SashimiLaxLiten.webp"
-import SashimiLaxStor from "../../assets/food/SashimiLaxStor.webp"
-import SashimiLaxTunaLiten from "../../assets/food/SashimiLaxTunaLiten.webp"
-import SashimiLaxTunaStor from "../../assets/food/SashimiLaxTunaStor.webp"
-import SashimiMixLiten from "../../assets/food/SashimiMixLiten.webp"
-import SashimiMixStor from "../../assets/food/SashimiMixStor.webp"
-import placeholderSashimi from "../../assets/food/sashimi.jpg"
+import SashimiLaxLiten from "../../assets/food/sashimi/SashimiLaxLiten.webp"
+import SashimiLaxStor from "../../assets/food/sashimi/SashimiLaxStor.webp"
+import SashimiLaxTunaLiten from "../../assets/food/sashimi/SashimiLaxTunaLiten.webp"
+import SashimiLaxTunaStor from "../../assets/food/sashimi/SashimiLaxTunaStor.webp"
+import SashimiMixLiten from "../../assets/food/sashimi/SashimiMixLiten.webp"
+import SashimiMixStor from "../../assets/food/sashimi/SashimiMixStor.webp"
+import placeholderSashimi from "../../assets/placeholders/sashimi.jpg"
 import { MenuCategory } from "../../types";
 
 export const Sashimi: MenuCategory = {

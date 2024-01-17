@@ -60,12 +60,12 @@ const Navbar = () => {
       <div className="justify-center hidden lg:flex p-4">
       <ul className="flex items-center mx-4 text-black font-bold">
         <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
-          <li className="m-4" onClick={toggleDropdown}>
-            Meny
-            <ul className={` ${isDropdownOpen ? 'block' : 'hidden'}`}>
+        <li className="m-4" onClick={toggleDropdown}>
+          Meny
+          <ul className={` ${isDropdownOpen ? 'block' : 'hidden'}`}>
             {Meny.map((category) => (
               <li key={category.name}>
-                <SmoothScroll targetId={`category-${category.id}`} onClick={closeDropdowns}>
+                <SmoothScroll targetId={category.id} offset={"8rem"}  onClick={closeDropdowns}>
                   {category.name}
                 </SmoothScroll>
               </li>
@@ -74,7 +74,11 @@ const Navbar = () => {
               </li>
           </div>
           <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
-            <li className="m-4"><a href="contact"> Kontakta Oss</a></li>
+            <li className="m-4">
+            <SmoothScroll targetId={"contact"}>
+            Kontakt
+          </SmoothScroll>
+            </li>
           </div>
           <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
           <li className="m-4"><a

@@ -1,29 +1,33 @@
 
-import placeholderMaki from "../../assets/food/maki.jpg";
+import placeholderMaki from "../../assets/placeholders/maki.jpg";
 
-import StandardRoll from "../../assets/food/StandardRoll.webp";
-import CaliforniaRoll from "../../assets/food/CaliforniaRoll.webp";
-import CaliforniaRollSpecial from "../../assets/food/CaliforniaRollSpecial.webp";
-import VegetariskRoll from "../../assets/food/VegetariskRoll.webp";
-import VegetariskMangoRoll from "../../assets/food/VegetariskMangoRoll.webp";
-import ShakeMaki from "../../assets/food/ShakeMaki.webp";
-import TekkaMaki from "../../assets/food/TekkaMaki.webp";
-import KappaMaki from "../../assets/food/KappaMaki.webp";
-import PhiladelphiaRoll from "../../assets/food/PhiladelphiaRoll.webp";
-import FutomakiRoll from "../../assets/food/FutomakiRoll.webp";
-import MiyabiSpecialRoll from "../../assets/food/MiyabiSpecialRoll.webp";
-import TempuraRoll from "../../assets/food/TempuraRoll.webp";
-import TempuraRollFriterad from "../../assets/food/TempuraRollFriterad.webp";
-import TeriyakiRoll from "../../assets/food/TeriyakiRoll.webp";
-import AlaskaRoll from "../../assets/food/AlaskaRoll.webp";
-import DragonRoll from "../../assets/food/DragonRoll.webp";
-import CrispyMiyabiRoll from "../../assets/food/CrispyMiyabiRoll.webp";
-import CrispyAlaskaRoll from "../../assets/food/CrispyAlaskaRoll.webp";
-import CrispyTempuraRoll from "../../assets/food/CrispyTempuraRoll.webp";
-import CrispyVegetariskRoll from "../../assets/food/CrispyVegetariskRoll.webp";
-import SpicytunaRoll from "../../assets/food/SpicytunaRoll.webp";
-import KaraageRoll from "../../assets/food/KaraageRoll.webp";
-import YakinikuRoll from "../../assets/food/YakinikuRoll.webp";
+import StandardRoll from "../../assets/food/norimaki/StandardRoll.webp";
+import CaliforniaRoll from "../../assets/food/norimaki/CaliforniaRoll.webp";
+import CaliforniaRollSpecial from "../../assets/food/norimaki/CaliforniaRollSpecial.webp";
+import VegetariskRoll from "../../assets/food/norimaki/VegetariskRoll.webp";
+import VegetariskMangoRoll from "../../assets/food/norimaki/VegetariskMangoRoll.webp";
+import ShakeMaki from "../../assets/food/norimaki/ShakeMaki.webp";
+import TekkaMaki from "../../assets/food/norimaki/TekkaMaki.webp";
+import KappaMaki from "../../assets/food/norimaki/KappaMaki.webp";
+import HawaiiMakiLax from "../../assets/food/norimaki/HawaiiMakiLax.webp";
+import HawaiiMakiTuna from "../../assets/food/norimaki/HawaiiMakiTuna.webp";
+import TemakeMax from "../../assets/food/norimaki/TemakeMax.webp";
+import PhiladelphiaRoll from "../../assets/food/norimaki/PhiladelphiaRoll.webp";
+import FutomakiRoll from "../../assets/food/norimaki/FutomakiRoll.webp";
+import MiyabiSpecialRoll from "../../assets/food/norimaki/MiyabiSpecialRoll.webp";
+import TempuraRoll from "../../assets/food/norimaki/TempuraRoll.webp";
+import TempuraRollFriterad from "../../assets/food/norimaki/TempuraRollFriterad.webp";
+import TeriyakiRoll from "../../assets/food/norimaki/TeriyakiRoll.webp";
+import AlaskaRoll from "../../assets/food/norimaki/AlaskaRoll.webp";
+import DragonRoll from "../../assets/food/norimaki/DragonRoll.webp";
+import CrispyMiyabiRoll from "../../assets/food/norimaki/CrispyMiyabiRoll.webp";
+import CrispyAlaskaRoll from "../../assets/food/norimaki/CrispyAlaskaRoll.webp";
+import CrispyTempuraRoll from "../../assets/food/norimaki/CrispyTempuraRoll.webp";
+import CrispyVegetariskRoll from "../../assets/food/norimaki/CrispyVegetariskRoll.webp";
+import SpicytunaRoll from "../../assets/food/norimaki/SpicytunaRoll.webp";
+import CrispySpicyTunaRoll from "../../assets/food/norimaki/CrispySpicyTunaRoll.webp";
+import KaraageRoll from "../../assets/food/norimaki/KaraageRoll.webp";
+import YakinikuRoll from "../../assets/food/norimaki/YakinikuRoll.webp";
 import { MenuCategory } from "../../types";
 
 export const Norimaki: MenuCategory = {
@@ -67,7 +71,7 @@ export const Norimaki: MenuCategory = {
       dishname: ["Crispy Spicy Tuna Roll", "Crispy Spicy Lax Roll"],
       types: ["Tuna", "Lax"],
       prices: [169],
-      images: [placeholderMaki, placeholderMaki],
+      images: [CrispySpicyTunaRoll, CrispySpicyTunaRoll],
       description: ["Friterad Sjögräsrulle med marinerad tonfisk, krispig sallad, avokado med chilimajonnäs och srirachasås", "Friterad Sjögräsrulle med marinerad lax, krispig sallad, avokado med chilimajonnäs och srirachasås"],
     },
     {
@@ -99,7 +103,7 @@ export const Norimaki: MenuCategory = {
       dishname: ["Hawaiimaki"],
       types: ["Tonfisk", "Lax"],
       prices: [120],
-      images: [placeholderMaki, placeholderMaki],
+      images: [HawaiiMakiTuna, HawaiiMakiLax],
       description: ["Sjögräsrulle med tonfisk och avocado", "Sjögräsrulle med lax och avocado"],
     },
     {
@@ -107,7 +111,7 @@ export const Norimaki: MenuCategory = {
       dishname: ["Temakemax"],
       types: [],
       prices: [135],
-      images: [placeholderMaki],
+      images: [TemakeMax],
       description: ["Sjögräsrulle med tonfisk, avocado och lax"],
     },
     {

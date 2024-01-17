@@ -1,9 +1,9 @@
-import LaxSushi from "../assets/food/LaxSushi.webp";
-import CaliforniaRollSpecial from "../assets/food/CaliforniaRollSpecial.webp";
-import BentoDeluxe from "../assets/food/BentoDeluxe.webp";
-import GrillLaxSushi from "../assets/food/GrillLaxSushi.webp";
-import WokadKyckling from "../assets/food/WokadKyckling.webp";
-import FamiljeSushiMedium from "../assets/food/FamiljeSushi40.webp";
+import LaxSushi from "../assets/food/sushi/LaxSushi.webp";
+import CaliforniaRollSpecial from "../assets/food/norimaki/CaliforniaRollSpecial.webp";
+import BentoDeluxe from "../assets/food/varmratter/BentoDeluxe.webp";
+import GrillLaxSushi from "../assets/food/sushi/GrillLaxSushi.webp";
+import WokadKyckling from "../assets/food/varmratter/WokadKyckling.webp";
+import FamiljeSushiMedium from "../assets/food/sushi/FamiljeSushi40.webp";
 
 export const images = [
   {

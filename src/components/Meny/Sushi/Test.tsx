@@ -17,6 +17,17 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
   const [selectedDescription, setSelectedDescription] = useState<string | null>(
     (dish.description || []).length > 0 ? dish.description![0] : null
   );
+  const getDescription = (index: number) => {
+    if (dish.description && dish.description.length > 0) {
+      if (dish.description.length === 1) {
+        return dish.description[0];
+      } else {
+        return dish.description[index] || null;
+      }
+    }
+    return null;
+  };
+  
 
   const handlePiecesClick = (piece: number, index: number) => {
     if (dish.images) {
@@ -26,7 +37,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       setSelectedType(null);
       setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
       setSelectedDishName(dish.dishname.length === 1 ? dish.dishname[0] : dish.dishname[index]);
-      setSelectedDescription((dish.description || [])[0] || null);
+      setSelectedDescription(getDescription(index));
     }
   };
 
@@ -38,7 +49,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       setSelectedType(null);
       setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
       setSelectedDishName(dish.dishname.length === 1 ? dish.dishname[0] : dish.dishname[index]);
-      setSelectedDescription((dish.description || [])[0] || null);
+      setSelectedDescription(getDescription(index));
     }
   };
 
@@ -50,7 +61,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       setSelectedSize(null);
       setSelectedPrice(dish.prices.length === 1 ? dish.prices[0] : dish.prices[index]);
       setSelectedDishName(dish.dishname.length === 1 ? dish.dishname[0] : dish.dishname[index]);
-      setSelectedDescription((dish.description || [])[0] || null);
+      setSelectedDescription(getDescription(index));
     }
   };
 
@@ -65,50 +76,8 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
   const handleModalClose = () => {
     setIsModalOpen(false);
   };
-
-  /* useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        handleModalClose();
-      } else if (event.key === "ArrowLeft") {
-        handlePrevImage();
-      } else if (event.key === "ArrowRight") {
-        handleNextImage();
-      }
-    };
-    const handlePrevImage = () => {
-      setCurrentImageIndex((prevIndex) => {
-        const newIndex = (prevIndex - 1 + dish.images.length) % dish.images.length;
-        setSelectedDishName(dish.dishname[newIndex]);
-        setSelectedSize(dish.size?.[newIndex] || null);
-        setSelectedType(dish.types?.[newIndex] || null);
-        setSelectedPiece(dish.pieces?.[newIndex] || null);
-        setSelectedPrice(dish.prices?.[newIndex] || null);
-        return newIndex;
-      });
-    };
-
-    const handleNextImage = () => {
-      setCurrentImageIndex((prevIndex) => {
-        const newIndex = (prevIndex + 1) % dish.images.length;
-        setSelectedDishName(dish.dishname[newIndex]);
-        setSelectedSize(dish.size?.[newIndex] || null);
-        setSelectedType(dish.types?.[newIndex] || null);
-        setSelectedPiece(dish.pieces?.[newIndex] || null);
-        setSelectedPrice(dish.prices?.[newIndex] || null);
-        return newIndex;
-      });
-    };
- 
-  
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []); */
-  
   return (
-    <div key={dish.dishname[0]} className="rounded border-2 border-red-800 flex flex-col justify-between w-full">
+    <div key={dish.dishname[0]} className="rounded border-2 border-red-800 flex flex-col justify-between h-full">
       <section className="">
         <div className="flex flex-col">
           <div className="h-20">
@@ -234,10 +203,10 @@ const MenuComponent: React.FC = () => (
     {Meny.map((category) => (
       <div key={category.name} className="mb-8">
         <section className="flex flex-col items-center border-2 border-yellow-400 m-8 lg:m-0">
-          <h2 className="text-6xl font-cormorant text-golden text-center font-bold mb-4">{category.name}</h2>
+          <h2 className="text-6xl font-cormorant text-golden text-center font-bold mb-4" id={category.id}>{category.name}</h2>
           <div className={category.dishes.length < 4 ? "flex flex-col lg:flex-row justify-center gap-8 border-2 border-blue-700 max-w-fit" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8"}>
             {category.dishes.map((dish) => (
-              <div key={dish.id} id={`dish-${dish.id}`} className="dish-container">
+              <div key={dish.id} className="dish-container">
                 <DishComponent dish={dish} />
               </div>
             ))}
