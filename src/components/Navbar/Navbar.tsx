@@ -124,7 +124,11 @@ const Navbar = () => {
         </div>
       )}
       {isDropdownOpen && isDropdownEnabled && (
-          <p className="my-2 hover:bg-red-900 font-semibold text-center hover:text-white transition duration-300 cursor-pointer" onClick={toggleContactDropdown}>Kontakt</p>
+        <p className="my-2 hover:bg-red-900 font-semibold text-center hover:text-white transition duration-300 cursor-pointer" onClick={toggleContactDropdown}>
+        <SmoothScroll targetId={"contact"}>
+            Kontakt
+          </SmoothScroll>
+        </p>
       )}
        {isContactDropdownOpen && isDropdownEnabled && (
         <div className="text-black font-bold w-full z-40 overflow-auto p-4" onClick={handleLinkClick}>
