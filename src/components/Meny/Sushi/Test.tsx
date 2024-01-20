@@ -77,11 +77,11 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     setIsModalOpen(false);
   };
   return (
-    <div key={dish.dishname[0]} className="rounded border-2 border-red-800 flex flex-col justify-between h-full">
+    <div key={dish.dishname[0]} className="rounded-xl flex flex-col justify-between h-full border-2 border-red-900">
       <section className="">
         <div className="flex flex-col">
-          <div className="h-20">
-            <h3 className="text-2xl text-center font-bold font-cormorant text-white mb-2">{selectedDishName}</h3>
+          <div className="bg-red-900 rounded-t-lg">
+            <h3 className="text-2xl text-center font-bold font-cormorant text-white">{selectedDishName}</h3>
           </div>
           {dish.images && (
             <img
@@ -97,8 +97,8 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
 
       {isModalOpen && dish.images && dish.images.length > 0 && (
   <dialog open className="fixed inset-0 min-h-full min-w-fit bg-black bg-opacity-90" onClick={handleModalClose}>
-      <section className="border-2 border-green-600 mt-16 flex flex-col items-center">
-          <div className="border-2 border-blue-400 mt-24 lg:mt-24 xl:mt-12 flex flex-col">
+      <section className="mt-16 flex flex-col items-center">
+          <div className="mt-24 lg:mt-24 xl:mt-12 flex flex-col">
       <img
         className="cursor-pointer lg:mx-52"
         onClick={handleImageClick}
@@ -106,8 +106,6 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
         alt={dish.dishname[0]}
               />
               </div>
-              {/* </section>
-            <section className=""> */}
       <div className="bg-red-900 max-w-fit rounded-lg p-1 text-white font-cormorant font-bold text-center">
         <p className="text-md md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           {selectedDishName}
@@ -182,12 +180,12 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
           )}
 
 <div className={`${
-  uniquePrices.length < 4 ? "flex flex-row flex-wrap gap-x-6 mx-2 my-4 justify-center" : "grid grid-cols-4 gap-0 text-center justify-center m-2"
-}`}>
+  uniquePrices.length < 4 ? "flex flex-row flex-wrap gap-x-6 mx-2 my-4 justify-center" : "grid grid-cols-4 gap-0  justify-center m-2"
+} `}>
           {uniquePrices.map((price) => (
             <span
               key={price}
-              className={`${selectedPrice === price ? "bg-red-900" : "transparent"} mx-1 p-1 rounded-lg`}
+              className={`${selectedPrice === price ? "bg-red-900" : "transparent"} mx-1 p-1 text-center text-lg md:text-base rounded-lg`}
             >
               {price}kr
             </span>
@@ -199,14 +197,14 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
 };
 
 const MenuComponent: React.FC = () => (
-  <div className="container mx-auto mt-8">
+  <div className="container mx-auto my-32">
     {Meny.map((category) => (
-      <div key={category.name} className="mb-8">
-        <section className="flex flex-col items-center border-2 border-yellow-400 mx-8 my-8 lg:my-0">
-          <h2 className="text-6xl font-cormorant text-golden text-center font-bold mb-4" id={category.id}>{category.name}</h2>
-          <div className={category.dishes.length < 4 ? "flex flex-col lg:flex-row justify-center gap-8 border-2 border-blue-700 max-w-fit" : "grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-8"}>
+      <div key={category.name} className="my-40">
+        <section className="flex flex-col mx-8 my-8 lg:my-0">
+          <h2 className="text-6xl font-cormorant text-golden text-center font-bold my-8" id={category.id}>{category.name}</h2>
+          <div className={category.dishes.length < 4 ? "flex flex-col lg:flex-row justify-center gap-8 max-w-fit" : "grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 col-end-auto gap-8"}>
             {category.dishes.map((dish) => (
-              <div key={dish.id} className="dish-container">
+              <div key={dish.id} className="container">
                 <DishComponent dish={dish} />
               </div>
             ))}

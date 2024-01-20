@@ -9,9 +9,11 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
   const [isDropdownEnabled, setIsDropdownEnabled] = useState(true);
+  const [isMenyDropdownOpen, setIsMenyDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsContactDropdownOpen(false);
+    setIsMenyDropdownOpen(false);
     setIsDropdownOpen(prevState => !prevState);
   };
 
@@ -20,10 +22,18 @@ const Navbar = () => {
     setIsContactDropdownOpen(prevState => !prevState);
   };
 
+  const toggleMenyDropdown = () => {
+    setIsDropdownOpen(false);
+    setIsContactDropdownOpen(false);
+    setIsMenyDropdownOpen(prevState => !prevState);
+  };
+
   const closeDropdowns = () => {
     setIsDropdownOpen(false);
     setIsContactDropdownOpen(false);
+    setIsMenyDropdownOpen(false);
   };
+
   const handleScroll = () => {
     closeDropdowns();
   };
@@ -60,17 +70,17 @@ const Navbar = () => {
           <img src={logo.fanblack} alt="Side Menu button" className="h-12 lg:m-6 p-auto float-right lg:hidden cursor-pointer" onClick={toggleDropdown} />
       <div className="justify-center hidden lg:flex p-4">
       <ul className="flex items-center mx-4 text-black font-bold">
-      <div className={`relative cursor-pointer transition duration-300 rounded-lg mx-2 flex justify-center ${isDropdownOpen ? 'bg-red-900 text-white' : 'hover:bg-red-900 hover:text-white'}`} onClick={toggleDropdown}>
-      <li className="relative m-4">Meny</li>
-      <ul className={` ${isDropdownOpen ? 'flex' : 'hidden'} absolute top-full rounded-lg flex-col bg-red-900 w-36 text-center p-2 border-red-900 mt-2`}>
-  {Meny.map((category) => (
-    <li
-      key={category.name}
-      className={`my-1 py-2 rounded-lg text-black hover:bg-red-800 hover:text-white transition duration-500`}
-    >
-      <SmoothScroll targetId={category.id} offset={"8rem"} onClick={closeDropdowns}>
-        {category.name}
-      </SmoothScroll>
+      <div className={`relative cursor-pointer transition duration-300 rounded-lg mx-2 flex justify-center ${isMenyDropdownOpen ? 'bg-red-900 text-white' : 'hover:bg-red-900 hover:text-white'}`} onClick={toggleMenyDropdown}>
+        <li className="relative m-4">Meny</li>
+        <ul className={` ${isMenyDropdownOpen ? 'flex' : 'hidden'} absolute top-full rounded-lg flex-col bg-red-900 w-36 text-center p-2 border-red-900 mt-2`}>
+          {Meny.map((category) => (
+            <li
+              key={category.name}
+              className={`my-1 py-2 rounded-lg text-black hover:bg-red-800 hover:text-white transition duration-500`}
+            >
+              <SmoothScroll targetId={category.id} offset={"8rem"} onClick={closeDropdowns}>
+                {category.name}
+              </SmoothScroll>
     </li>
   ))}
 </ul>
@@ -119,8 +129,24 @@ const Navbar = () => {
                 >Hemleverans med Wolt
                 </a>
               </li>
-              <br />
-            <li className="my-2 hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer">Meny</li>
+            <br />
+            <div>
+  <li className="font-bold font-opensans text-xl">
+    Meny
+  </li>
+  <ul className={`relative top-full rounded-lg flex-col text-center gap-x-16 px-16 grid grid-cols-2`}>
+    {Meny.map((category) => (
+      <li
+        key={category.name}
+        className={`my-1 py-2 rounded-lg text-black hover:bg-red-900 hover:text-white transition duration-500`}
+      >
+        <SmoothScroll targetId={category.id} offset={"8rem"} onClick={closeDropdowns}>
+          {category.name}
+        </SmoothScroll>
+      </li>
+    ))}
+  </ul>
+</div>
             <br />
             </ul>
         </div>

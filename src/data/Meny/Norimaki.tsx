@@ -1,5 +1,6 @@
 
-import placeholderMaki from "../../assets/placeholders/maki.jpg";
+/* import placeholderMaki from "../../assets/placeholders/maki.jpg"; */
+import placeholder from "../../assets/placeholders/placeholder.jpg";
 
 import StandardRoll from "../../assets/food/norimaki/StandardRoll.webp";
 import CaliforniaRoll from "../../assets/food/norimaki/CaliforniaRoll.webp";
@@ -191,7 +192,7 @@ export const Norimaki: MenuCategory = {
       dishname: ["Bibimbap roll"],
       types: ["Entrécôte", "Kyckling", "Räka"],
       prices: [130],
-      images: [placeholderMaki,placeholderMaki,placeholderMaki],
+      images: [placeholder,placeholder,placeholder],
       description: ["Sjögräsrulle med gurka, sallad, kimchi samt salladsmix"],
     },
   ]
