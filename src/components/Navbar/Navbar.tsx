@@ -60,17 +60,20 @@ const Navbar = () => {
           <img src={logo.fanblack} alt="Side Menu button" className="h-12 lg:m-6 p-auto float-right lg:hidden cursor-pointer" onClick={toggleDropdown} />
       <div className="justify-center hidden lg:flex p-4">
       <ul className="flex items-center mx-4 text-black font-bold">
-      <div className={`relative cursor-pointer rounded-lg mx-2 ${isDropdownOpen ? 'bg-red-900 text-white' : 'hover:bg-red-900 hover:text-white'}`} onClick={toggleDropdown}>
+      <div className={`relative cursor-pointer transition duration-300 rounded-lg mx-2 flex justify-center ${isDropdownOpen ? 'bg-red-900 text-white' : 'hover:bg-red-900 hover:text-white'}`} onClick={toggleDropdown}>
       <li className="relative m-4">Meny</li>
-      <ul className={` ${isDropdownOpen ? 'flex' : 'hidden'} absolute flex-col bg-red-900 w-36 text-center mt-2 transition-transform transform ease-in-out duration-1000`}>
-        {Meny.map((category) => (
-          <li key={category.name} className="py-2">
-            <SmoothScroll targetId={category.id} offset={"8rem"} onClick={closeDropdowns}>
-              {category.name}
-            </SmoothScroll>
-      </li>
-    ))}
-  </ul>
+      <ul className={` ${isDropdownOpen ? 'flex' : 'hidden'} absolute top-full rounded-lg flex-col bg-red-900 w-36 text-center p-2 border-red-900 mt-2`}>
+  {Meny.map((category) => (
+    <li
+      key={category.name}
+      className={`my-1 py-2 rounded-lg text-black hover:bg-red-800 hover:text-white transition duration-500`}
+    >
+      <SmoothScroll targetId={category.id} offset={"8rem"} onClick={closeDropdowns}>
+        {category.name}
+      </SmoothScroll>
+    </li>
+  ))}
+</ul>
           </div>
           <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
             <li className="m-4">

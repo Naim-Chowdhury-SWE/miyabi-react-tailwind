@@ -4,7 +4,8 @@ import SashimiLaxTunaLiten from "../../assets/food/sashimi/SashimiLaxTunaLiten.w
 import SashimiLaxTunaStor from "../../assets/food/sashimi/SashimiLaxTunaStor.webp"
 import SashimiMixLiten from "../../assets/food/sashimi/SashimiMixLiten.webp"
 import SashimiMixStor from "../../assets/food/sashimi/SashimiMixStor.webp"
-import placeholderSashimi from "../../assets/placeholders/sashimi.jpg"
+/* import placeholderSashimi from "../../assets/placeholders/sashimi.jpg" */
+import placeholder from "../../assets/placeholders/placeholder.jpg"
 import { MenuCategory } from "../../types";
 
 export const Sashimi: MenuCategory = {
@@ -24,7 +25,7 @@ export const Sashimi: MenuCategory = {
       dishname: ["Tonfisk Sashimi Liten", "Tonfisk Sashimi Stor"],
       size: ["Liten", "Stor"],
       prices: [130, 250],
-      images: [placeholderSashimi, placeholderSashimi],
+      images: [placeholder, placeholder],
       description: ["Stora skivor Tonfisk på salladsbädd"],
     },
     {

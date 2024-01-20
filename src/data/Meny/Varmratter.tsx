@@ -37,6 +37,11 @@ import BibimbapTofu from "../../assets/food/varmratter/BibimbapTofu.webp";
 import BibimbapMix from "../../assets/food/varmratter/BibimbapMix.webp";
 import { MenuCategory } from "../../types";
 
+const bentoNormal = "Yakiniku, Yakitori samt Sushi (2 rullar, 1 lax, 1 räka). Ris och sallad ingår";
+const bentoGyoza = "Yakiniku, Yakitori samt Gyoza. Ris och sallad ingår";
+const bentoMiyabi = "Yakiniku, Yakitori, Tempura samt Sushi (1 lax, 1 räka, 1 tonfisk). Ris och sallad ingår";
+const bentoDeluxe = "Yakiniku, Yakitori, Tempura, Gyoza samt Sushi (1 lax, 1 räka, 1 tonfisk). Ris och sallad ingår";
+
 export const Varmratter: MenuCategory = {
   id: "varmratter",
   name: "Varmrätter",
@@ -67,11 +72,11 @@ export const Varmratter: MenuCategory = {
       },
       {
         id: 4,
-        dishname: ["Bentolåda", "Miyabi Bento", "Bento Deluxe", "Bento Gyoza"],
-        types: ["Normal", "Miyabi Bento", "Bento Deluxe", "Bento Gyoza"],
-        prices: [149, 165, 185, 149],
-        images: [Bento, BentoMiyabi, BentoDeluxe, BentoGyoza],
-        description: ["Yakiniku, Yakitori samt Sushi (2 rullar, 1 lax, 1 räka). Ris och sallad ingår", "Yakiniku, Yakitori, Tempura samt Sushi (1 lax, 1 räka, 1 tonfisk). Ris och sallad ingår", "Yakiniku, Yakitori, Tempura, Gyoza samt Sushi (1 lax, 1 räka, 1 tonfisk). Ris och sallad ingår", "Yakiniku, Yakitori samt Gyoza. Ris och sallad ingår"],
+        dishname: ["Bentolåda", "Bento Gyoza", "Miyabi Bento", "Bento Deluxe"],
+        types: ["Normal", "Bento Gyoza", "Miyabi Bento", "Bento Deluxe"],
+        prices: [149, 149, 165, 185],
+        images: [Bento, BentoGyoza, BentoMiyabi, BentoDeluxe],
+        description: [bentoNormal, bentoGyoza, bentoMiyabi, bentoDeluxe],
       },
       {
         id: 5,

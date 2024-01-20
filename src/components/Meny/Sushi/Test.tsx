@@ -202,9 +202,9 @@ const MenuComponent: React.FC = () => (
   <div className="container mx-auto mt-8">
     {Meny.map((category) => (
       <div key={category.name} className="mb-8">
-        <section className="flex flex-col items-center border-2 border-yellow-400 m-8 lg:m-0">
+        <section className="flex flex-col items-center border-2 border-yellow-400 mx-8 my-8 lg:my-0">
           <h2 className="text-6xl font-cormorant text-golden text-center font-bold mb-4" id={category.id}>{category.name}</h2>
-          <div className={category.dishes.length < 4 ? "flex flex-col lg:flex-row justify-center gap-8 border-2 border-blue-700 max-w-fit" : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8"}>
+          <div className={category.dishes.length < 4 ? "flex flex-col lg:flex-row justify-center gap-8 border-2 border-blue-700 max-w-fit" : "grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-8"}>
             {category.dishes.map((dish) => (
               <div key={dish.id} className="dish-container">
                 <DishComponent dish={dish} />

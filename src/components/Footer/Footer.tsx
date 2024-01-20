@@ -1,11 +1,13 @@
 import logo from "../../data/logos";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsTelephoneFill } from "react-icons/bs";
+import SmoothScroll from "../ScrollLink/ScrollLink";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-      <footer className="text-white font-opensans font-semibold lg:text-lg border-2 border-violet-600">
+    <footer className="text-white font-opensans font-semibold lg:text-lg flex flex-col items-center border-2 border-violet-600">
+      <div className="container border-2 border-white">
       <img src={logo.logo3} alt="Miyabi Logo" className="mx-8 lg:scale-50 border-2 border-green-600" />
       
         <address id="contact" className="flex flex-col-reverse md:justify-between md:flex-row m-8 lg:mx-12 xl:mx-40 lg:px-10 xl:px-24 border-2 border-yellow-400">
@@ -48,13 +50,18 @@ const Footer = () => {
             </div>
           </section>
         </address>
+        </div>
 
-      <section className=" bg-red-800 w-full text-black font-bold text-center">
-        <p className="my-4">
+      <section className=" bg-red-800 w-full text-black font-bold flex flex-col items-center">
+        <p className="mt-2">
           OBS! Sista Beställning tas kl <time>20:30</time>
         </p>
-          <a className="my-4 p-2 hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg " href="#Hem">Till Toppen</a>
-        <p className="mt-4">{currentYear} &copy; Miabi AB</p>
+        <SmoothScroll targetId="Hem">
+          <div>
+            <p className="mt-2 p-2 border-4 border-red-900 rounded-lg hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer">Till Toppen</p>
+            </div>
+          </SmoothScroll>
+        <p className="mt-2">{currentYear} &copy; Miabi AB</p>
       </section>
     </footer>
   )
