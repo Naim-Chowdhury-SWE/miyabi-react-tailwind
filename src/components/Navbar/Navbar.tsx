@@ -134,7 +134,7 @@ const Navbar = () => {
   <li className="font-bold font-opensans text-xl">
     Meny
   </li>
-  <ul className={`relative top-full rounded-lg flex-col text-center gap-x-16 px-16 grid grid-cols-2`}>
+  <ul className={`relative top-full rounded-lg flex-col text-center gap-x-12 px-12 grid grid-cols-2`}>
     {Meny.map((category) => (
       <li
         key={category.name}
