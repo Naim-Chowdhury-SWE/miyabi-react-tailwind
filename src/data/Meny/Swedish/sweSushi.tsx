@@ -26,12 +26,10 @@ import FamiljeSushi30 from "../../assets/food/sushi/FamiljeSushi30.webp";
 import FamiljeSushi40 from "../../assets/food/sushi/FamiljeSushi40.webp";
 import FamiljeSushi50 from "../../assets/food/sushi/FamiljeSushi50.webp";
 import FamiljeSushi70 from "../../assets/food/sushi/FamiljeSushi70.webp";
-import { MenuCategory } from "../../types";
+import { MenuCategory } from "../../../types";
 
-/* const messageBlandadSushiLiten = "Blandad Sushi med många olika typer av sushibitar.";
-const messageBlandadSushiStor = "Blandad Sushi med många olika typer av sushibitar."; */
 
-export const Sushi: MenuCategory = {
+export const sweSushi: MenuCategory = {
   language: "Swedish",
   id: "sushi",
   name: "Sushi Meny",
