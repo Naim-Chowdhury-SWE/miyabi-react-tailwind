@@ -1,13 +1,12 @@
-import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react';
-import "./DishCarousel.css"
+import useEmblaCarousel from 'embla-carousel-react';
+import "./DishCarousel.css";
 
 type DishCarouselProps = {
-    images: string[];
-    options?: EmblaOptionsType;
-  };
-  
- export const DishCarousel: React.FC<DishCarouselProps> = ({ images, options }) => {
-    const [emblaRef] = useEmblaCarousel(options);
+  images: string[];
+};
+
+export const DishCarousel: React.FC<DishCarouselProps> = ({ images}) => {
+  const [emblaRef] = useEmblaCarousel();
   
     return (
       <div className="embla">
