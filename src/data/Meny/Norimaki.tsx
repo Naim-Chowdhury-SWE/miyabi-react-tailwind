@@ -1,6 +1,7 @@
 
-/* import placeholderMaki from "../../assets/placeholders/maki.jpg"; */
-import placeholder from "../../assets/placeholders/placeholder.jpg";
+/* import placeholderMaki from "../../assets/placeholders/maki.jpg"; 
+import placeholder from "../../assets/placeholders/placeholder.jpg"; */
+import placeholder from "../../assets/placeholders/BildSaknas.webp";
 
 import StandardRoll from "../../assets/food/norimaki/StandardRoll.webp";
 import CaliforniaRoll from "../../assets/food/norimaki/CaliforniaRoll.webp";

@@ -7,8 +7,9 @@ import KokosmjölkKyckling from "../../assets/food/special/KokosmjölkKyckling.w
 import KokosmjölkRäka from "../../assets/food/special/KokosmjölkRäka.webp";
 import PadThaiKyckling from "../../assets/food/special/PadThaiKyckling.webp";
 import PadThaiRäka from "../../assets/food/special/PadThaiRäka.webp";
-/* import placeholderFood from "../../assets/placeholders/food.svg"; */
-import placeholder from "../../assets/placeholders/placeholder.jpg";
+/* import placeholderFood from "../../assets/placeholders/food.svg"; 
+import placeholder from "../../assets/placeholders/placeholder.jpg";*/
+import placeholder from "../../assets/placeholders/BildSaknas.webp";
 import { MenuCategory } from "../../types";
 
 const text1 = "Serveras med ris eller nudlar samt sallad";

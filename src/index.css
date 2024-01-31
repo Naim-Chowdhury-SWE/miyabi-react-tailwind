@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -58,8 +59,18 @@ html {
   text-transform: capitalize;
 }
 
-/* .derp {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0.2rem, 1fr));
-  gap: 0.2rem;
-} */
+.rotate {
+  animation: rotate 30s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+      transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

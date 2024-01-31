@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
   const [isDropdownEnabled, setIsDropdownEnabled] = useState(true);
   const [isMenyDropdownOpen, setIsMenyDropdownOpen] = useState(false);
+  /* const [rotateClass, setRotateClass] = useState(''); */
 
   const toggleDropdown = () => {
     setIsContactDropdownOpen(false);
@@ -63,11 +64,26 @@ const Navbar = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+ /*  useEffect(() => {
+    const interval = setInterval(() => {
+      setRotateClass("rotate");
+      setTimeout(() => {
+        setRotateClass('');
+      }, 2000); 
+    }, Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000);
+
+    return () => clearInterval(interval);
+  }, []); */
 
   return (
     <nav className="bg-red-800 w-full fixed z-50 top-0 p-2">
         <img src={logo.miyabitextblack} alt="Miyabi Logo" className="h-12 lg:h-24 m-auto float-left" />
-          <img src={logo.fanblack} alt="Side Menu button" className="h-12 lg:m-6 p-auto float-right lg:hidden cursor-pointer" onClick={toggleDropdown} />
+        <img
+        src={logo.fanblack}
+        alt="Side Menu button"
+        className={`h-12 lg:m-6 p-auto float-right lg:hidden cursor-pointer rotate`}
+        onClick={toggleDropdown}
+      />
       <div className="justify-center hidden lg:flex p-4">
       <ul className="flex items-center mx-4 text-black font-bold">
       <div className={`relative cursor-pointer transition duration-300 rounded-lg mx-2 flex justify-center ${isMenyDropdownOpen ? 'bg-red-900 text-white' : 'hover:bg-red-900 hover:text-white'}`} onClick={toggleMenyDropdown}>
