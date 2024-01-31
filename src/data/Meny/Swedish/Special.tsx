@@ -1,18 +1,18 @@
-import WokadKycklingStark from "../../assets/food/special/WokadKycklingStark.webp";
-import WokadRäkorStark from "../../assets/food/special/WokadRäkorStark.webp";
-import OstronsåsKyckling from "../../assets/food/special/OstronsåsKyckling.webp";
-import OstronsåsRäka from "../../assets/food/special/OstronsåsRäka.webp";
-import OstronsåsBiff from "../../assets/food/special/OstronsåsBiff.webp";
-import KokosmjölkKyckling from "../../assets/food/special/KokosmjölkKyckling.webp";
-import KokosmjölkRäka from "../../assets/food/special/KokosmjölkRäka.webp";
-import PadThaiKyckling from "../../assets/food/special/PadThaiKyckling.webp";
-import PadThaiRäka from "../../assets/food/special/PadThaiRäka.webp";
-import placeholder from "../../assets/placeholders/BildSaknas.webp";
-import { MenuCategory } from "../../types";
+import WokadKycklingStark from "../../../assets/food/special/WokadKycklingStark.webp";
+import WokadRäkorStark from "../../../assets/food/special/WokadRäkorStark.webp";
+import OstronsåsKyckling from "../../../assets/food/special/OstronsåsKyckling.webp";
+import OstronsåsRäka from "../../../assets/food/special/OstronsåsRäka.webp";
+import OstronsåsBiff from "../../../assets/food/special/OstronsåsBiff.webp";
+import KokosmjölkKyckling from "../../../assets/food/special/KokosmjölkKyckling.webp";
+import KokosmjölkRäka from "../../../assets/food/special/KokosmjölkRäka.webp";
+import PadThaiKyckling from "../../../assets/food/special/PadThaiKyckling.webp";
+import PadThaiRäka from "../../../assets/food/special/PadThaiRäka.webp";
+import placeholder from "../../../assets/placeholders/BildSaknas.webp";
+import { MenuCategory } from "../../../types";
 
 const text1 = "Serveras med ris eller nudlar samt sallad";
 
-export const Special: MenuCategory = {
+export const sweSpecial: MenuCategory = {
   id:"special",
   name: "Special Meny",
   dishes: [
