@@ -20,12 +20,12 @@
 html {
   background: url(../src/assets/bg.webp);
   background-attachment: fixed;
-  padding-top: 6rem;
+  padding-top: 5rem;
 }
 
 @media (max-width: 1024px) {
   html {
-    padding-top: 4rem;
+    padding-top: 3rem;
   }
 }
 
