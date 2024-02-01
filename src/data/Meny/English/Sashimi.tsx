@@ -4,7 +4,7 @@ import SashimiLaxTunaLiten from "../../../assets/food/sashimi/SashimiLaxTunaLite
 import SashimiLaxTunaStor from "../../../assets/food/sashimi/SashimiLaxTunaStor.webp"
 import SashimiMixLiten from "../../../assets/food/sashimi/SashimiMixLiten.webp"
 import SashimiMixStor from "../../../assets/food/sashimi/SashimiMixStor.webp"
-import placeholder from "../../../assets/placeholders/BildSaknas.webp";
+import placeholder from "../../../assets/placeholders/MissingImage.webp";
 import { MenuCategory } from "../../../types";
 
 export const engSashimi: MenuCategory = {

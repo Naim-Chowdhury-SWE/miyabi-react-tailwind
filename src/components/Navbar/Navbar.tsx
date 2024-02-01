@@ -3,14 +3,14 @@ import { BsTelephoneFill } from "react-icons/bs";
 import logo from "../../data/logos";
 import { useState, useEffect } from 'react';
 import SmoothScroll from "../ScrollLink/ScrollLink";
-import { Meny } from "../../data/Meny/Meny";
+import { getMeny, toggleLanguage, currentLanguage  } from "../../data/Meny/LanguageDecider";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
   const [isDropdownEnabled, setIsDropdownEnabled] = useState(true);
   const [isMenyDropdownOpen, setIsMenyDropdownOpen] = useState(false);
-  /* const [rotateClass, setRotateClass] = useState(''); */
 
   const toggleDropdown = () => {
     setIsContactDropdownOpen(false);
@@ -64,20 +64,26 @@ const Navbar = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
- /*  useEffect(() => {
-    const interval = setInterval(() => {
-      setRotateClass("rotate");
-      setTimeout(() => {
-        setRotateClass('');
-      }, 2000); 
-    }, Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000);
 
-    return () => clearInterval(interval);
-  }, []); */
-
+  const handleLanguageChange = () => {
+    console.log("Language changed!");
+    toggleLanguage();
+  };
+  const menyItems = getMeny().map((category) => (
+    <li
+      key={category.name}
+      className={`my-1 py-2 rounded-lg text-black hover:bg-red-900 hover:text-white transition duration-500`}
+    >
+      <SmoothScroll targetId={category.id} offset={"8rem"} onClick={closeDropdowns}>
+        {category.name}
+      </SmoothScroll>
+    </li>
+  ));
   return (
     <nav className="bg-red-800 w-full fixed z-50 top-0 p-2">
-        <img src={logo.miyabitextblack} alt="Miyabi Logo" className="h-12 lg:h-24 m-auto float-left" />
+      <img src={logo.miyabitextblack} alt="Miyabi Logo" className="h-12 lg:h-24 m-auto float-left" />
+      {/* <LanguageSwitcher onLanguageChange={handleLanguageChange} /> */}
+
         <img
         src={logo.fanblack}
         alt="Side Menu button"
@@ -89,16 +95,7 @@ const Navbar = () => {
       <div className={`relative cursor-pointer transition duration-300 rounded-lg mx-2 flex justify-center ${isMenyDropdownOpen ? 'bg-red-900 text-white' : 'hover:bg-red-900 hover:text-white'}`} onClick={toggleMenyDropdown}>
         <li className="relative m-4">Meny</li>
         <ul className={` ${isMenyDropdownOpen ? 'flex' : 'hidden'} absolute top-full rounded-lg flex-col bg-red-900 w-36 text-center p-2 border-red-900 mt-2`}>
-          {Meny.map((category) => (
-            <li
-              key={category.name}
-              className={`my-1 py-2 rounded-lg text-black hover:bg-red-800 hover:text-white transition duration-500`}
-            >
-              <SmoothScroll targetId={category.id} offset={"8rem"} onClick={closeDropdowns}>
-                {category.name}
-              </SmoothScroll>
-    </li>
-  ))}
+        {menyItems}
 </ul>
           </div>
           <div className="hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer rounded-lg mx-2">
@@ -151,16 +148,7 @@ const Navbar = () => {
     Meny
   </li>
   <ul className={`relative top-full rounded-lg flex-col text-center gap-x-12 px-12 grid grid-cols-2`}>
-    {Meny.map((category) => (
-      <li
-        key={category.name}
-        className={`my-1 py-2 rounded-lg text-black hover:bg-red-900 hover:text-white transition duration-500`}
-      >
-        <SmoothScroll targetId={category.id} offset={"8rem"} onClick={closeDropdowns}>
-          {category.name}
-        </SmoothScroll>
-      </li>
-    ))}
+  {menyItems}
   </ul>
 </div>
             <br />

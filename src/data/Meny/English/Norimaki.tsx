@@ -1,4 +1,4 @@
-import placeholder from "../../../assets/placeholders/BildSaknas.webp";
+import placeholder from "../../../assets/placeholders/MissingImage.webp";
 
 import StandardRoll from "../../../assets/food/norimaki/StandardRoll.webp";
 import CaliforniaRoll from "../../../assets/food/norimaki/CaliforniaRoll.webp";

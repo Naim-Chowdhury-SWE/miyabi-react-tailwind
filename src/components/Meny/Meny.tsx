@@ -1,6 +1,8 @@
 // MenuComponent.tsx
 import React, { useState, /* useEffect */ } from "react";
-import { Meny } from "../../data/Meny/Meny";
+import { languages, currentLanguage } from "../../data/Meny/LanguageDecider"; // Import languages
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import Header from "../Header/Header";
 import {DishProps} from "../../types"
 
 const DishComponent: React.FC<DishProps> = ({ dish }) => {
@@ -75,6 +77,11 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
 
   const handleModalClose = () => {
     setIsModalOpen(false);
+  };
+  const language = currentLanguage; // assuming currentLanguage is accessible here
+
+  const getPiecesLabel = () => {
+    return language === 'swedish' ? 'Bitar' : 'Pieces';
   };
   return (
     <div key={dish.dishname[0]} className="rounded-xl flex flex-col justify-between h-full border-2 border-red-900">
@@ -154,7 +161,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
             selectedPiece === piece ? "bg-red-900" : "transparent"
           } mx-1 p-1 rounded-lg text-center cursor-pointer`}
         >
-          {piece}{" "} Bitar
+          {piece}{" "} {getPiecesLabel()}
         </span>
       ))}
       </div>
@@ -196,23 +203,43 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
   );
 };
 
-const MenuComponent: React.FC = () => (
-  <div className="container mx-auto my-32">
-    {Meny.map((category) => (
-      <div key={category.name} className="my-40">
-        <section className="flex flex-col mx-8 my-8 lg:my-0">
-          <h2 className="text-6xl font-cormorant text-golden text-center font-bold my-8" id={category.id}>{category.name}</h2>
-          <div className={category.dishes.length < 4 ? "flex flex-col lg:flex-row justify-center gap-8 max-w-fit" : "grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 col-end-auto gap-8"}>
-            {category.dishes.map((dish) => (
-              <div key={dish.id} className="container">
-                <DishComponent dish={dish} />
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
-    ))}
-  </div>
-);
+const MenuComponent: React.FC = () => {
+  const [language, setLanguage] = useState(currentLanguage);
+
+  const handleLanguageChange = () => {
+    setLanguage((prevLanguage) => (prevLanguage === "swedish" ? "english" : "swedish"));
+  };
+
+  const selectedMeny = languages[language];
+
+  return (
+    <div className="container mx-auto my-32">
+      <LanguageSwitcher onLanguageChange={handleLanguageChange} />
+      <Header language={language} />
+      {selectedMeny.map((category) => (
+        <div key={category.name} className="my-40">
+          <section className="flex flex-col mx-8 my-8 lg:my-0">
+            <h2 className="text-6xl font-cormorant text-golden text-center font-bold my-8" id={category.id}>
+              {category.name}
+            </h2>
+            <div
+              className={
+                category.dishes.length < 4
+                  ? "flex flex-col lg:flex-row justify-center gap-8 max-w-fit"
+                  : "grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 col-end-auto gap-8"
+              }
+            >
+              {category.dishes.map((dish) => (
+                <div key={dish.id} className="container">
+                  <DishComponent dish={dish} />
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default MenuComponent;

@@ -24,7 +24,7 @@ function App() {
           <Carousel slides={SLIDES} options={OPTIONS} />
         </section>
       </div>
-        <Header />
+        {/* <Header /> */}
       <main>
       <Meny />
       </main>

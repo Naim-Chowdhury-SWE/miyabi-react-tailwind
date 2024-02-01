@@ -7,7 +7,7 @@ import KokosmjölkKyckling from "../../../assets/food/special/KokosmjölkKycklin
 import KokosmjölkRäka from "../../../assets/food/special/KokosmjölkRäka.webp";
 import PadThaiKyckling from "../../../assets/food/special/PadThaiKyckling.webp";
 import PadThaiRäka from "../../../assets/food/special/PadThaiRäka.webp";
-import placeholder from "../../../assets/placeholders/BildSaknas.webp";
+import placeholder from "../../../assets/placeholders/MissingImage.webp";
 import { MenuCategory } from "../../../types";
 
 const text1 = "Served with salad and either rice or noodles";

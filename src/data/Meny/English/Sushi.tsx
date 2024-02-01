@@ -61,7 +61,7 @@ export const engSushi: MenuCategory = {
     },
     {
       id: 4,
-      dishname: ["Mom's Sushi"],
+      dishname: ["Mother Sushi"],
       pieces: [10, 12],
       prices: [109, 135],
       images: [MammaSushi10, MammaSushi12],
@@ -125,7 +125,7 @@ export const engSushi: MenuCategory = {
     },
     {
       id: 12,
-      dishname: ["Grilled Salmon with Chili Mayo"],
+      dishname: ["Seared Salmon with Chili Mayo"],
       pieces: [8, 10, 12],
       prices: [135, 155, 175],
       images: [GrillLaxSushi, GrillLaxSushi, GrillLaxSushi],
