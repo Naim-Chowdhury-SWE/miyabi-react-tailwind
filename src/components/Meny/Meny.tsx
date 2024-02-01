@@ -1,9 +1,10 @@
 // MenuComponent.tsx
-import React, { useState, /* useEffect */ } from "react";
+import React, { useState } from "react";
 import { languages, currentLanguage } from "../../data/Meny/LanguageDecider"; // Import languages
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import Header from "../Header/Header";
-import {DishProps} from "../../types"
+import Footer from "../Footer/Footer";
+import { DishProps, MenuCategory } from "../../types"
 
 const DishComponent: React.FC<DishProps> = ({ dish }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -78,7 +79,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
   const handleModalClose = () => {
     setIsModalOpen(false);
   };
-  const language = currentLanguage; // assuming currentLanguage is accessible here
+  const language = currentLanguage;
 
   const getPiecesLabel = () => {
     return language === 'swedish' ? 'Bitar' : 'Pieces';
@@ -210,10 +211,10 @@ const MenuComponent: React.FC = () => {
     setLanguage((prevLanguage) => (prevLanguage === "swedish" ? "english" : "swedish"));
   };
 
-  const selectedMeny = languages[language];
+  const selectedMeny: MenuCategory[] = languages[language];
 
   return (
-    <div className="container mx-auto my-32">
+    <div className="container mx-auto mt-32">
       <LanguageSwitcher onLanguageChange={handleLanguageChange} />
       <Header language={language} />
       {selectedMeny.map((category) => (
@@ -238,6 +239,7 @@ const MenuComponent: React.FC = () => {
           </section>
         </div>
       ))}
+      <Footer language={language} />
     </div>
   );
 };

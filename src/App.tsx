@@ -1,7 +1,5 @@
 import Navbar from "./components/Navbar/Navbar"
-import Header from "./components/Header/Header";
 import Meny from "./components/Meny/Meny";
-import Footer from "./components/Footer/Footer"
 import Carousel from "./components/Carousel/Carousel"
 import {EmblaCarouselProps} from "./types"
 
@@ -24,11 +22,9 @@ function App() {
           <Carousel slides={SLIDES} options={OPTIONS} />
         </section>
       </div>
-        {/* <Header /> */}
       <main>
       <Meny />
       </main>
-        <Footer />
     </>
   )
 }

@@ -21,6 +21,8 @@ import { engVarmratter } from "./English/Varmratter";
 import { engSpecial } from "./English/Special";
 import { engBarn } from "./English/Barn";
 
+import { MenuCategory } from "../../types";
+
 
 
 const languages = {
@@ -31,7 +33,14 @@ const languages = {
     japanese: [],
   };
   
-  let currentLanguage = "swedish";
+  type LanguageKey = "swedish" | "english" | "french" | "spanish" | "japanese";
+
+  type languages = {
+    [key in LanguageKey]: MenuCategory[];
+  };
+  
+  let currentLanguage: LanguageKey = "swedish";
+  
 
   const toggleLanguage = () => {
     if (currentLanguage === "swedish") {
@@ -44,17 +53,3 @@ const languages = {
   const getMeny = () => languages[currentLanguage];
   
   export { languages, getMeny, currentLanguage, toggleLanguage };
-
-/* import {Lunch} from "./Lunch";
-import {Sushi} from "./Sushi";
-import {Norimaki} from "./Norimaki";
-import {Sashimi} from "./Sashimi";
-import {Pokebowl} from "./Pokebowl";
-import {Varmratter} from "./Varmratter";
-import {Special} from "./Special";
-import { Barn } from "./Barn"; */
-
-/* import { MenuCategory } from "../../types";
-
-const swedishMeny: MenuCategory[] = [sweLunch, sweSushi, sweNorimaki, sweSashimi, swePokebowl, sweVarmratter, sweSpecial, sweBarn];
-const englishMeny: MenuCategory[] = [engLunch, engSushi, engNorimaki, engSashimi, engPokebowl, engVarmratter, engSpecial, engBarn]; */
