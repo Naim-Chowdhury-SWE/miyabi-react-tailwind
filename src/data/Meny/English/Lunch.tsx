@@ -20,7 +20,7 @@ import PokebowlTofu from "../../../assets/food/pokebowl/PokebowlTofu.webp"
 
 import { MenuCategory } from "../../../types";
 
-const monday = "Stir-fried Rice Noodles with sirloin and vegetables";
+const monday = "Stir-fried Rice Noodles with sliced beef and vegetables";
 const tuesday = "Stir-fried chicken with rice and vegetables";
 const wednesday = "Japanese Curry with chicken, vegetables, and rice";
 const thursday = "Yakisoba (Stir-fried egg noodles with sliced beef)";

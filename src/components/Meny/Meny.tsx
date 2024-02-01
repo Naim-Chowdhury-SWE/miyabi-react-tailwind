@@ -133,7 +133,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
     <div
     className={`${
       dish.types.length < 4 ? 'flex justify-center items-center' : 'grid'
-    } grid-cols-4 gap-0`}
+    } grid-cols-3 gap-0`}
   >
     {dish.types.map((types, index) => (
         <span

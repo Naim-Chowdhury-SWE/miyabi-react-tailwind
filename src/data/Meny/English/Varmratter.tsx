@@ -101,7 +101,7 @@ export const engVarmratter: MenuCategory = {
         types: [],
         prices: [149],
         images: [Yakisoba],
-        description: ["Stir-fried egg noodles with sirloin and vegetables"],
+        description: ["Stir-fried egg noodles with sliced beef and vegetables"],
       },
       {
         id: 8,

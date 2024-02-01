@@ -3,8 +3,7 @@ import { BsTelephoneFill } from "react-icons/bs";
 import logo from "../../data/logos";
 import { useState, useEffect } from 'react';
 import SmoothScroll from "../ScrollLink/ScrollLink";
-import { getMeny, toggleLanguage, currentLanguage  } from "../../data/Meny/LanguageDecider";
-import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import { getMeny } from "../../data/Meny/LanguageDecider";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -65,10 +64,6 @@ const Navbar = () => {
     };
   }, []);
 
-  const handleLanguageChange = () => {
-    console.log("Language changed!");
-    toggleLanguage();
-  };
   const menyItems = getMeny().map((category) => (
     <li
       key={category.name}
