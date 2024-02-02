@@ -5,7 +5,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ language }) =>  {
 
   const getTitle = () => {
-    return language === 'swedish' ? 'Välkommen till Miyabi' : 'Welcome to Miyabi';
+    return language === 'swedish' ? 'Välkommen till Miyabi på Lidingö' : 'Welcome to Miyabi on Lidingö';
   };
 
   const getDescription1 = () => {
