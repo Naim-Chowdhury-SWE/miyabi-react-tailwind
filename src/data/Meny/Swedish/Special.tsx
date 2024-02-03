@@ -34,7 +34,7 @@ export const sweSpecial: MenuCategory = {
     },
     {
       id: 3,
-      dishname: ["Wokad Kyckling med ostronsås"],
+      dishname: ["Wok med ostronsås",],
       types: ["Kyckling", "Räkor", "Biff"],
       prices: [150],
       images: [OstronsåsKyckling, OstronsåsRäka, OstronsåsBiff],

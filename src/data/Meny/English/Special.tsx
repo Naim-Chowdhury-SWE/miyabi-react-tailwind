@@ -34,7 +34,7 @@ export const engSpecial: MenuCategory = {
     },
     {
       id: 3,
-      dishname: ["Stir-fried Chicken with Oyster Sauce"],
+      dishname: ["Wok with Oyster Sauce"],
       types: ["Chicken", "Shrimp", "Beef"],
       prices: [150],
       images: [OstronsåsKyckling, OstronsåsRäka, OstronsåsBiff],

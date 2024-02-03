@@ -62,7 +62,7 @@ export const engNorimaki: MenuCategory = {
       dishname: ["Spicy Tuna Roll", "Spicy Salmon Roll"],
       types: ["Tuna", "Salmon"],
       prices: [145],
-      images: [SpicytunaRoll, SpicytunaRoll],
+      images: [SpicytunaRoll, placeholder],
       description: ["Seaweed roll with chili-marinated tuna", "Seaweed roll with chili-marinated salmon"],
     },
     {
@@ -70,7 +70,7 @@ export const engNorimaki: MenuCategory = {
       dishname: ["Crispy Spicy Tuna Roll", "Crispy Spicy Salmon Roll"],
       types: ["Tuna", "Salmon"],
       prices: [169],
-      images: [CrispySpicyTunaRoll, CrispySpicyTunaRoll],
+      images: [CrispySpicyTunaRoll, placeholder],
       description: ["Fried seaweed roll with marinated tuna, crispy salad, avocado with chili mayo and sriracha sauce", "Fried seaweed roll with marinated salmon, crispy salad, avocado with chili mayo and sriracha sauce"],
     },
     {

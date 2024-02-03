@@ -62,7 +62,7 @@ export const sweNorimaki: MenuCategory = {
       dishname: ["Spicy Tuna roll","Spicy Lax roll"],
       types: ["Tuna", "Lax"],
       prices: [145],
-      images: [SpicytunaRoll, SpicytunaRoll],
+      images: [SpicytunaRoll, placeholder],
       description: ["Sjögräsrulle med chilimarinerad tonfisk", "Sjögräsrulle med chilimarinerad lax"],
     },
     {
@@ -70,7 +70,7 @@ export const sweNorimaki: MenuCategory = {
       dishname: ["Crispy Spicy Tuna Roll", "Crispy Spicy Lax Roll"],
       types: ["Tuna", "Lax"],
       prices: [169],
-      images: [CrispySpicyTunaRoll, CrispySpicyTunaRoll],
+      images: [CrispySpicyTunaRoll, placeholder],
       description: ["Friterad Sjögräsrulle med marinerad tonfisk, krispig sallad, avokado med chilimajonnäs och srirachasås", "Friterad Sjögräsrulle med marinerad lax, krispig sallad, avokado med chilimajonnäs och srirachasås"],
     },
     {
