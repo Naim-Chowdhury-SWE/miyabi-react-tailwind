@@ -214,7 +214,7 @@ const MenuComponent: React.FC = () => {
   const selectedMeny: MenuCategory[] = languages[language];
 
   return (
-    <div className="container mx-auto mt-32">
+    <div className="container min-w-full mt-32">
       <LanguageSwitcher onLanguageChange={handleLanguageChange} />
       <Header language={language} />
       {selectedMeny.map((category) => (
