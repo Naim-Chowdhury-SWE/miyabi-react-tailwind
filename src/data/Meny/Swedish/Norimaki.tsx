@@ -25,6 +25,7 @@ import CrispyTempuraRoll from "../../../assets/food/norimaki/CrispyTempuraRoll.w
 import CrispyVegetariskRoll from "../../../assets/food/norimaki/CrispyVegetariskRoll.webp";
 import SpicytunaRoll from "../../../assets/food/norimaki/SpicytunaRoll.webp";
 import CrispySpicyTunaRoll from "../../../assets/food/norimaki/CrispySpicyTunaRoll.webp";
+import CrispySpicyLaxRoll from "../../../assets/food/norimaki/CrispySpicyLaxRoll.webp";
 import KaraageRoll from "../../../assets/food/norimaki/KaraageRoll.webp";
 import YakinikuRoll from "../../../assets/food/norimaki/YakinikuRoll.webp";
 import { MenuCategory } from "../../../types";
@@ -70,7 +71,7 @@ export const sweNorimaki: MenuCategory = {
       dishname: ["Crispy Spicy Tuna Roll", "Crispy Spicy Lax Roll"],
       types: ["Tuna", "Lax"],
       prices: [169],
-      images: [CrispySpicyTunaRoll, placeholder],
+      images: [CrispySpicyTunaRoll, CrispySpicyLaxRoll],
       description: ["Friterad Sjögräsrulle med marinerad tonfisk, krispig sallad, avokado med chilimajonnäs och srirachasås", "Friterad Sjögräsrulle med marinerad lax, krispig sallad, avokado med chilimajonnäs och srirachasås"],
     },
     {
