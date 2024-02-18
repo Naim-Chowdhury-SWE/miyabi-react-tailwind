@@ -1,5 +1,6 @@
 import WokadKycklingStark from "../../../assets/food/special/WokadKycklingStark.webp";
 import WokadRäkorStark from "../../../assets/food/special/WokadRäkorStark.webp";
+import WokadKycklingRäkorStark from "../../../assets/food/special/WokadKycklingRäkorStark.webp";
 import OstronsåsKyckling from "../../../assets/food/special/OstronsåsKyckling.webp";
 import OstronsåsRäka from "../../../assets/food/special/OstronsåsRäka.webp";
 import OstronsåsBiff from "../../../assets/food/special/OstronsåsBiff.webp";
@@ -19,10 +20,10 @@ export const sweSpecial: MenuCategory = {
     {
       id: 1,
       dishname: ["Wok med grön curry (stark)"],
-      types: ["Kyckling", "Räkor", "Biff", "Lax"],
+      types: ["Kyckling", "Räkor", "Biff"],
       prices: [150],
-      images: [placeholder,placeholder,placeholder,placeholder],
-      description: [text1,text1,text1, "Serveras med ris samt sallad"],
+      images: [placeholder,placeholder,placeholder],
+      description: [text1,text1,text1],
     },
     {
       id: 2,
@@ -30,7 +31,7 @@ export const sweSpecial: MenuCategory = {
       types: ["Kyckling", "Räkor"],
       prices: [150],
       images: [KokosmjölkKyckling,KokosmjölkRäka],
-      description: [text1,text1,],
+      description: [text1,text1],
     },
     {
       id: 3,
@@ -53,7 +54,7 @@ export const sweSpecial: MenuCategory = {
       dishname: ["Wokade räkor + kyckling (stark)"],
       types: [],
       prices: [165],
-      images: [placeholder],
+      images: [WokadKycklingRäkorStark],
       description: [text1 + "(cashew + 5kr)"],
     },
     {

@@ -24,6 +24,7 @@ import CrispyAlaskaRoll from "../../../assets/food/norimaki/CrispyAlaskaRoll.web
 import CrispyTempuraRoll from "../../../assets/food/norimaki/CrispyTempuraRoll.webp";
 import CrispyVegetariskRoll from "../../../assets/food/norimaki/CrispyVegetariskRoll.webp";
 import SpicytunaRoll from "../../../assets/food/norimaki/SpicytunaRoll.webp";
+import SpicyLaxRoll from "../../../assets/food/norimaki/SpicyLaxRoll.webp";
 import CrispySpicyTunaRoll from "../../../assets/food/norimaki/CrispySpicyTunaRoll.webp";
 import CrispySpicyLaxRoll from "../../../assets/food/norimaki/CrispySpicyLaxRoll.webp";
 import KaraageRoll from "../../../assets/food/norimaki/KaraageRoll.webp";
@@ -63,7 +64,7 @@ export const engNorimaki: MenuCategory = {
       dishname: ["Spicy Tuna Roll", "Spicy Salmon Roll"],
       types: ["Tuna", "Salmon"],
       prices: [145],
-      images: [SpicytunaRoll, placeholder],
+      images: [SpicytunaRoll, SpicyLaxRoll],
       description: ["Seaweed roll with chili-marinated tuna", "Seaweed roll with chili-marinated salmon"],
     },
     {
