@@ -27,7 +27,7 @@ export const engSpecial: MenuCategory = {
     },
     {
       id: 2,
-      dishname: ["Wok with coconut milk and curry (spicy)"],
+      dishname: ["Wok with coconut milk and curry"],
       types: ["Chicken", "Shrimp"],
       prices: [150],
       images: [KokosmjölkKyckling, KokosmjölkRäka],

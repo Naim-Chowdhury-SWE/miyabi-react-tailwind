@@ -27,7 +27,7 @@ export const sweSpecial: MenuCategory = {
     },
     {
       id: 2,
-      dishname: ["Wok med kokosmjölk och curry (stark)"],
+      dishname: ["Wok med kokosmjölk och curry"],
       types: ["Kyckling", "Räkor"],
       prices: [150],
       images: [KokosmjölkKyckling,KokosmjölkRäka],
