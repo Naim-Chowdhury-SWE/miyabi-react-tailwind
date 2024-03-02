@@ -160,7 +160,7 @@ export const sweVarmratter: MenuCategory = {
       },
       {
         id: 15,
-        dishname: ["Uddon"],
+        dishname: ["Udon"],
         types: ["Entrecote", "Tempura", "Vegetarisk", "Gyoza"],
         prices: [145],
         images: [UdonEntrecote, UdonTempura, UdonVegetarisk, UdonGyoza],

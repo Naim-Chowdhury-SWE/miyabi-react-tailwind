@@ -43,7 +43,7 @@ const Footer: React.FC<FooterProps> = () => {
           </section>
 
           <section className="min-w-fit">
-            <p className="pb-4 lg:text-2xl text-center">
+            <p className="pb-4 lg:text-3xl text-center font-chowfun tracking-widest">
               {currentLanguage === "swedish" ? "Öppettider" : "Opening Hours"}
             </p>
             <div className="flex flex-row justify-around md:gap-4 lg:gap-12">
@@ -73,7 +73,7 @@ const Footer: React.FC<FooterProps> = () => {
         </p>
         <SmoothScroll targetId="Hem">
           <div>
-            <p className="mt-2 p-2 rounded-lg hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer">
+            <p className="mt-2 p-2 rounded-lg font-chowfun tracking-widest underline underline-offset-8 hover:bg-red-900 hover:text-white transition duration-300 cursor-pointer">
               {currentLanguage === "swedish" ? "Till Toppen" : "To the Top"}
             </p>
           </div>

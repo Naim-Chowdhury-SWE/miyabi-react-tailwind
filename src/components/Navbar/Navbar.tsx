@@ -75,7 +75,7 @@ const Navbar = () => {
     </li>
   ));
   return (
-    <nav className="bg-red-800 w-full fixed z-50 top-0 p-2">
+    <nav className="bg-red-800 w-full fixed z-50 top-0 p-2 font-chowfun tracking-wider">
       <img src={logo.miyabitextblack} alt="Miyabi Logo" className="h-8 lg:h-16 m-auto float-left" />
       {/* <LanguageSwitcher onLanguageChange={handleLanguageChange} /> */}
 
@@ -89,7 +89,7 @@ const Navbar = () => {
       <ul className="flex items-center mx-4 text-black font-bold">
       <div className={`relative cursor-pointer transition duration-300 rounded-lg mx-2 flex justify-center ${isMenyDropdownOpen ? 'bg-red-900 text-white' : 'hover:bg-red-900 hover:text-white'}`} onClick={toggleMenyDropdown}>
         <li className="relative m-4">Meny</li>
-        <ul className={` ${isMenyDropdownOpen ? 'flex' : 'hidden'} absolute top-full rounded-lg flex-col bg-red-900 w-36 text-center p-2 border-red-900 mt-2`}>
+        <ul className={` ${isMenyDropdownOpen ? 'flex' : 'hidden'} absolute top-full rounded-lg flex-col bg-red-900 w-44 text-center p-2 border-red-900 mt-2`}>
         {menyItems}
 </ul>
           </div>
@@ -139,7 +139,7 @@ const Navbar = () => {
               </li>
             <br />
             <div>
-  <li className="font-bold font-opensans text-xl">
+  <li className="font-bold text-xl">
     Meny
   </li>
   <ul className={`relative top-full rounded-lg flex-col text-center gap-x-12 px-12 grid grid-cols-2`}>

@@ -89,7 +89,7 @@ const DishComponent: React.FC<DishProps> = ({ dish }) => {
       <section className="">
         <div className="flex flex-col">
           <div className="bg-red-900 rounded-t-lg">
-            <h3 className="text-2xl text-center font-bold font-cormorant text-white">{selectedDishName}</h3>
+            <h3 className="text-2xl text-center tracking-wide font-chowfun text-white">{selectedDishName}</h3>
           </div>
           {dish.images && (
             <img
@@ -220,7 +220,7 @@ const MenuComponent: React.FC = () => {
       {selectedMeny.map((category) => (
         <div key={category.name} className="my-40">
           <section className="flex flex-col mx-8 my-8 lg:my-0">
-            <h2 className="text-6xl font-cormorant text-golden text-center font-bold my-8" id={category.id}>
+            <h2 className="text-6xl font-chowfun tracking-widest2 text-golden text-center font-bold my-8" id={category.id}>
               {category.name}
             </h2>
             <div
