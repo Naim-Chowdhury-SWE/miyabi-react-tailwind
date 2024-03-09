@@ -218,9 +218,9 @@ const MenuComponent: React.FC = () => {
       <LanguageSwitcher onLanguageChange={handleLanguageChange} />
       <Header language={language} />
       {selectedMeny.map((category) => (
-        <div key={category.name} className="my-40">
+        <div key={category.name} className="my-40 flex justify-center">
           <section className="flex flex-col mx-8 my-8 lg:my-0">
-            <h2 className="text-6xl font-chowfun tracking-widest2 text-golden text-center font-bold my-8" id={category.id}>
+            <h2 className="text-6xl font-cormorant tracking-wide text-golden text-center font-bold my-8" id={category.id}>
               {category.name}
             </h2>
             <div
