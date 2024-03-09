@@ -43,7 +43,7 @@ const Footer: React.FC<FooterProps> = () => {
           </section>
 
           <section className="min-w-fit">
-            <p className="pb-4 lg:text-3xl text-center font-chowfun tracking-widest">
+            <p className="pb-4 text-2xl lg:text-4xl text-center font-opensans">
               {currentLanguage === "swedish" ? "Öppettider" : "Opening Hours"}
             </p>
             <div className="flex flex-row justify-around md:gap-4 lg:gap-12">
